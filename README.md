@@ -12,6 +12,8 @@ Color scheme:
 	(accent color) Lavendar:	#B8C2F5
 	Red:						#DE023D
 	Tan:						#F5D790
+	Dark gray:					#17181F
+	Gray:						#303240
 
 API key:	TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB
 Get 1 gif:	https://api.giphy.com/v1/gifs/trending?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB&limit=1

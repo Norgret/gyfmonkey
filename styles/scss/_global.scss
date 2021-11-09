@@ -1,7 +1,11 @@
 // colors
 $lightgray: #DADFEA;
-$gray: #56585B;
-$darkgray: #202124;
+$tan: #F5D790;
+$gray: #303240;
+$red: #DE023D;
+$lavendar: #B8C2F5;
+$green: #A2F5B9;
+$darkgray: #17181F;
 $black: #000000;
 $white: #ffffff;
 $shadow: rgba(0, 0, 0, 0.3);
@@ -49,19 +53,19 @@ $media-breakpoint: 1000px;
 }
 body {
 	@include flex-column;
-	align-items: center;
-	justify-content: center;
 	width: 100vw;
+	min-height: 110vh;
 }
 
 .text {
 	text-decoration: none;
+	font-family: sans-serif;
 	font-size: 1.0em;
 	font-weight: 300;
 	line-height: 140%;
 }
 .text.title {
-	font-size: 2.0em;
+	font-size: 4.0em;
 	font-weight: 900;
 }
 .text.subtitle {
