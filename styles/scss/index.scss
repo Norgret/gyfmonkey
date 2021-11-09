@@ -1,6 +1,6 @@
 @import "main.scss";
 
-$nav-height: 10vh;
+$navHeight: 10vh;
 
 #title-display {
 	@include flex-column;
@@ -19,6 +19,9 @@ $nav-height: 10vh;
 	background-color: #00f;
 
 	.gif-container {
+		@include flex-column;
+		align-items: center;
+		justify-content: center;
 		width: calc(100%/5);
 		height: calc(100%/3);
 		overflow: hidden;
