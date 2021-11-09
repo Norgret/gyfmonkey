@@ -13,6 +13,9 @@ Color scheme:
 	Red:						#DE023D
 	Tan:						#F5D790
 
+API key: TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB
+Get 1 gif: https://api.giphy.com/v1/gifs/trending?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB&limit=1
+
 * * * * *
 
 Workload division and file ownership:
