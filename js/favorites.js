@@ -18,3 +18,15 @@ function favGif(id) {
 function clearStorage() {
     localStorage.removeItem('stored_GIFS');
 }
+
+function render() {
+    console.log('works')
+}
+/* HTML code
+
+<script src="../js/favorites.js"></script>
+<script type="text/javascript">
+    window.onload = render();
+</script>
+
+*/
