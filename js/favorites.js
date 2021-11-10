@@ -9,9 +9,14 @@ else {
 }
 
 function favGif(id) {
-    savedGifs.push(id);
-    console.log(savedGifs);
-    localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+    if (savedGifs.indexOf(id) == -1) {
+        savedGifs.push(id);
+        console.log(savedGifs);
+        localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+    }
+    else {
+        console.log('gif already added')
+    }
 }
 
 //function for clear the local storage for testing
