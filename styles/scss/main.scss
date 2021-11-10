@@ -12,11 +12,11 @@
     height: 300px;
      .video {
         position: absolute;
-         width: 100%;
-         height: 100%;
-       object-fit: cover;
-       background-color: #ccc;
-     }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: #ccc;
+    }
      .video-content {
         width: 100%;
         margin: 5px; //margin around button container
@@ -25,9 +25,101 @@
         .btn {
             align-self: flex-end;
         }
-      }
+    }
   }
+
 //
 // custom styles must be placed near
 // bottom to overwrite default styles
 //
+
+//Navigation CSS + top bar
+
+#navigation{
+    background-color: $gray;
+    width:100%;
+    height:50px;
+    font-size: 1.5vw;
+    @include flex-row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    #active{
+        color:$darkgray;
+    }
+    a{
+    color:$lightgray;
+    text-decoration: none;
+    }
+    i{
+        font-size: 2.5vw;
+    }
+    div{
+        width:50%;
+        @include flex-row;
+        justify-content: space-between;
+    }
+    #search{
+        width:10%;
+        border: 1px solid black;
+        border-radius: 15%;
+        height:1.5vw;
+    }
+}
+
+//This is the css for the footer
+#footer{
+
+        background-color: $gray;
+        width:100%;
+        height:50px;
+        font-size: .8vw;
+        @include flex-row;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        a{
+        color:$lightgray;
+        text-decoration: none;
+        }
+
+
+}
+
+//CSS for the main body.
+
+// This is the css for the footer
+#footer{
+
+    background-color: $gray;
+    width:100%;
+    height:50px;
+    font-size: .8vw;
+    @include flex-row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    a{
+        color:$lightgray;
+        text-decoration: none;
+    }
+
+}
+
+// CSS for the main body.
+#body-container{
+    width:100%;
+    @include flex-row;
+    justify-content: space-around;
+    div{
+        width:45%;
+        @include flex-column;
+        align-items: center;
+    }
+
+}
