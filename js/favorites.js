@@ -15,7 +15,7 @@ function favGif(id) {
         localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
     }
     else {
-        console.log('gif already added')
+        console.log('gif already added');
     }
 }
 
@@ -42,11 +42,11 @@ function render() {
 }
 
 function remove(gifToGo) {
-    let index = savedGifs.indexOf(gifToGo)
-    savedGifs.splice(index, 1)
+    let index = savedGifs.indexOf(gifToGo);
+    savedGifs.splice(index, 1);
     localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
-    console.log(JSON.parse(localStorage.getItem('stored_GIFS')))
-    render()
+    console.log(JSON.parse(localStorage.getItem('stored_GIFS')));
+    render();
 }
 /* HTML code to show the gifs when the page loads
 
