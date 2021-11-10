@@ -4,13 +4,20 @@
 <head>
     <link type='text/css' rel='stylesheet' href="../styles/css/main.css" />
 
-    <title>Gyfmonkey Home</title>
+    <title>TEST PAGE</title>
 </head>
 
 <body>
-    <button onclick="clearStorage()">CLEAR STORAGE</button>
+    <p>Search</p>
+    <input type="text" id="searchBar">
+    <p>Number of results:</p>
+    <input type="number" id="searchNum" value="10">
+    <button onclick="runSearch()">Search</button>
     <div id="test"></div>
+    <button onclick="clearStorage()">CLEAR STORAGE</button>
+
 </body>
+<script src="../js/browse.js"></script>
 <script src="../js/favorites.js"></script>
 <script src="../js/main.js"></script>
 

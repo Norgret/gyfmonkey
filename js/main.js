@@ -5,7 +5,7 @@ async function getTrending() {
     let data = await response.json()
     return data
 }
-getTrending().then(data => showImg(data))
+//getTrending().then(data => showImg(data))
 
 //--------------------------
 //this function is a search
@@ -44,10 +44,10 @@ function showImg(info) {
         console.log('test')
         gifHTML = `<div class="video-view">
         <video autoplay loop muted class="video">
-            <source type="video/webm" src="https://i.giphy.com/media/${info.data.id}/giphy.mp4">
+            <source type="video/webm" src="https://i.giphy.com/media/${element}/giphy.mp4">
         </video>
         <div class="video-content">
-            <button onclick="">Save</button>
+            <button onclick="remove('${element}')">Remove</button>
             </div>
         </div>`;
     }
