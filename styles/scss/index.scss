@@ -1,1 +1,53 @@
 @import 'main.scss';
+
+$navHeight: 10vh;
+
+#title-display {
+	@include flex-column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#background-gif-display {
+	z-index: -1;
+	@include flex-row;
+	flex-wrap: wrap;
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	background-color: #00f;
+
+	.gif-container {
+		@include flex-column;
+		align-items: center;
+		justify-content: center;
+		width: calc(100%/5);
+		height: calc(100%/3);
+		overflow: hidden;
+		background-color: #000;
+
+		.gif {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			overflow: hidden;
+		}
+	}
+
+	.transparent-overlay {
+		position: absolute;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+}
+
+.title-content {
+	.title {
+		color: $white;
+		letter-spacing: 0.4em;
+	}
+}

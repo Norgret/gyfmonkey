@@ -1,12 +1,39 @@
 @import '_global.scss';
 
+#test {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.video-view {
+    display: flex;
+    position: relative;
+    width: 500px;
+    height: 300px;
+     .video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: #ccc;
+    }
+     .video-content {
+        width: 100%;
+        margin: 5px; //margin around button container
+        align-self: flex-end;
+        z-index: 1;
+        .btn {
+            align-self: flex-end;
+        }
+    }
+  }
+
 //
 // custom styles must be placed near
 // bottom to overwrite default styles
 //
 
 //Navigation CSS + top bar
-
 
 #navigation{
     background-color: $gray;
@@ -32,7 +59,6 @@
         width:50%;
         @include flex-row;
         justify-content: space-between;
-    
     }
     #search{
         width:10%;
@@ -44,7 +70,7 @@
 
 //This is the css for the footer
 #footer{
-    
+
         background-color: $gray;
         width:100%;
         height:50px;
@@ -54,16 +80,38 @@
         align-items: center;
         padding-top: 15px;
         padding-bottom: 15px;
-        
+
         a{
         color:$lightgray;
         text-decoration: none;
         }
-        
-       
+
+
 }
 
 //CSS for the main body.
+
+// This is the css for the footer
+#footer{
+
+    background-color: $gray;
+    width:100%;
+    height:50px;
+    font-size: .8vw;
+    @include flex-row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    a{
+        color:$lightgray;
+        text-decoration: none;
+    }
+
+}
+
+// CSS for the main body.
 #body-container{
     width:100%;
     @include flex-row;
