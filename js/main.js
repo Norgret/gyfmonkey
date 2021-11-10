@@ -5,7 +5,7 @@ async function getTrending() {
     let data = await response.json()
     return data
 }
-// getTrending().then(data => showImg(data))
+getTrending().then(data => showImg(data))
 
 //--------------------------
 //this function is a search
@@ -26,7 +26,7 @@ async function getByID(ID = 'u2TrRPK8J6Bwc') {
     console.log(data)
     return data
 }
-getByID().then(data => showImg(data))
+//getByID().then(data => showImg(data))
 
 //--------------------
 //the function that creates some simple HTML to show the gifs
@@ -61,10 +61,11 @@ function showImg(info) {
             <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
         </video>
         <div class="video-content">
-            <button onclick="">Save</button>
+            <button onclick="favGif('${info.data[a].id}')">Save</button>
             </div>
         </div>`
         }
     }
     document.getElementById('test').innerHTML = gifHTML;
 }
+
