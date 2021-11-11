@@ -57,24 +57,28 @@ body {
 }
 
 .text {
+	color: $white;
 	text-decoration: none;
 	font-family: sans-serif;
-	font-size: 1.0em;
+	font-size: 1.6em;
 	font-weight: 300;
 	line-height: 140%;
+	letter-spacing: 0.1em;
 }
 .text.title {
 	font-size: 4.0em;
 	font-weight: 900;
 }
 .text.subtitle {
-	font-size: 1.2em;
+	font-size: 3.0em;
 	font-weight: 900;
 }
 .text.bold {
 	font-weight: 900;
 }
-.text.link {}
+.text.link {
+	color: $white;
+}
 .text.link:hover {}
 .text.link.tool {}
 .text.link.tool:hover {}
@@ -84,7 +88,7 @@ body {
 // media
 //
 
-@media screen and (max-width: $media-breakpoint) {
+@media screen and (max-width: calc(#{$media-breakpoint} - 1px)) {
 	.desktop {
 		display: none;
 	}
