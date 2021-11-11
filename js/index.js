@@ -29,12 +29,15 @@ async function getRandomGifs(limit = 1) {
 
 let backgroundGifDisplay = document.getElementById('background-gif-display');
 
-function renderBackgroundDisplay() {
-    getTrendingGifs(15).then((gifs) => {    // execute callback on 15 gif objects
+function renderBackgroundDisplay(mobile = false) {
+    let limit;
+    if (mobile) limit = 9;
+    else limit = 15;
+    getTrendingGifs(limit).then((gifs) => {    // execute callback on 15 gif objects
         for (let gif of gifs.data) {
             backgroundGifDisplay.innerHTML += `
                 <div class='gif-container'>
-                    <video autoplay loop muted class="video">
+                    <video autoplay loop muted class="gif">
                         <source type="video/webm" src="${gif.images.preview.mp4}">
                     </video>
                 </div>
