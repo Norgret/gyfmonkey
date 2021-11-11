@@ -1,7 +1,7 @@
-$navHeight: 10vh;
 @import 'main.scss';
 @import 'nav.scss';
 
+$navHeight: 10vh;
 
 #title-display {
 	@include flex-column;
@@ -54,5 +54,6 @@ $navHeight: 10vh;
 	.title {
 		color: $white;
 		letter-spacing: 0.4em;
+
 	}
 }

@@ -1,4 +1,3 @@
-
 //
 //  API functions
 //
@@ -12,6 +11,8 @@ async function getTrendingGifs(limit = 1) {
 }
 
 async function getRandomGif() {
+
+
     let response = await fetch("https://api.giphy.com/v1/gifs/random?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB");
     let data = await response.json();
     return data;
