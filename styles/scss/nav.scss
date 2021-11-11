@@ -1,1 +1,13 @@
 @import 'main.scss';
+
+#navbar {
+	@include flex-row;
+	align-items: center;
+	justify-content: space-between;
+
+	position: fixed;
+	z-index: 1;
+	height: $nav-height;
+	width: 100vw;
+	background-color: $red;
+}
