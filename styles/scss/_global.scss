@@ -54,7 +54,6 @@ $nav-height: 10vh;
 body {
 	@include flex-column;
 	width: 100vw;
-	min-height: 110vh;
 }
 
 .text {

@@ -10,7 +10,7 @@
     position: relative;
     width: 500px;
     height: 300px;
-     .video {
+    .video {
         position: absolute;
 
         width: 100%;
@@ -18,7 +18,7 @@
         object-fit: cover;
         background-color: #ccc;
     }
-     .video-content {
+    .video-content {
         width: 100%;
         margin: 5px; //margin around button container
         align-self: flex-end;
@@ -28,7 +28,7 @@
         }
 
     }
-  }
+}
 
 
 //
@@ -120,12 +120,12 @@
     background-color: $darkgray;
     color:$lightgray;
     width:100%;
-    @include flex-row;
-    justify-content: space-around;
-    div{
-        width:45%;
-        @include flex-column;
-        align-items: center;
-    }
+    // @include flex-row;
+    // justify-content: space-around;
+    // div{
+    //     width:45%;
+    //     @include flex-column;
+    //     align-items: center;
+    // }
 
 }
