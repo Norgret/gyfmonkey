@@ -17,12 +17,6 @@ async function getRandomGif() {
     return data;
 }
 
-async function getRandomGifs(limit = 1) {
-    let gifs = [];
-
-    return gifs;
-}
-
 //
 //  Render backgroud gif display
 //
