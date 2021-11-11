@@ -8,7 +8,7 @@
 .video-view {
     display: flex;
     position: relative;
-    width: 500px;
+    width: 300px;
     height: 300px;
     .video {
         position: absolute;
@@ -17,13 +17,26 @@
         object-fit: cover;
         background-color: #ccc;
     }
+    .video:hover + .video-content{
+        visibility: visible;
+    }
+    .video-content:hover {
+        visibility: visible;
+    }
     .video-content {
+        height: 25px;
+        display: flex;
+        visibility: hidden;
+        background-color: rgb(65, 65, 65);
+        opacity: 80%;
         width: 100%;
         margin: 5px; //margin around button container
         align-self: flex-end;
+        align-items: center;
+        justify-content: space-around;
         z-index: 1;
-        .btn {
-            align-self: flex-end;
+        i {
+            color: black;
         }
 
     }
