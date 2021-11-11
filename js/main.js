@@ -54,18 +54,27 @@ function showImg(info) {
 
     //if there is a list of gifs then runs a loop
     else {
-
+        let heartStatus = ''
+        let chosenFavorites = JSON.parse(localStorage.getItem('stored_GIFS'))
         for (let a = 0; a < info.data.length; a++) { //loops through each gif and creates some html for each one
             gifHTML += `<div class="video-view">
-        <video autoplay loop muted class="video">
-            <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
-        </video>
+            <video autoplay loop muted class="video">
+                    <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
+                </video>
         <div class="video-content">
-            <button onclick="favGif('${info.data[a].id}')">Save</button>
+        <i class="fas fa-heart" onclick = "favGif('${info.data[a].id}')" ></i>
+        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"></i>
+        <i class="fas fa-info-circle"></i>
             </div>
         </div>`
         }
     }
+    // <video autoplay loop muted class="video">
+    //         <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
+    //     </video>
     document.getElementById('test').innerHTML = gifHTML;
 }
 
+function copy(url) {
+    navigator.clipboard.writeText(url)
+}
