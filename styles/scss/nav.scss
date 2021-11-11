@@ -10,4 +10,31 @@
 	height: $nav-height;
 	width: 100vw;
 	background-color: $red;
+
+	.navlinks-container {
+		@include flex-row;
+		justify-content: space-between;
+		width: 33%;
+		height: 100%;
+
+		.navlink {
+			@include flex-column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+		}
+		.navlink:hover {
+			background-color: $gray;
+		}
+		.navlink.active {
+			background-color: $darkgray;
+			.text {font-weight: 600;}
+		}
+
+	}
+}
+
+#search-bar {
+	width: 67%;
 }
