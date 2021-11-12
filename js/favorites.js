@@ -26,19 +26,19 @@ function clearStorage() {
 
 function render() {
     let htmlArea = document.getElementById('body-container');
-    let htmlContent = '';
+    let htmlContent = '<div id="gifHolder">';
     savedGifs.forEach(element => {
         htmlContent += `<div class="video-view">
         <video autoplay loop muted class="video">
             <source type="video/webm" src="https://i.giphy.com/media/${element}/giphy.mp4">
         </video>
         <div class="video-content">
-        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${element}/giphy.mp4')"></i>
+        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${element}/giphy.gif')"></i>
             <i class="fas fa-times" onclick="remove('${element}')"></i>
             </div>
         </div>`;
     });
-
+    htmlContent += '</div>'
     htmlArea.innerHTML = htmlContent;
 }
 
