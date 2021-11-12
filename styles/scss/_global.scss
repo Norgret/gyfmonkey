@@ -3,7 +3,7 @@ $lightgray: #DADFEA;
 $tan: #F5D790;
 $gray: #303240;
 $red: #DE023D;
-$lavender: #B8C2F5;
+$lavendar: #B8C2F5;
 $green: #A2F5B9;
 $darkgray: #17181F;
 $black: #000000;
@@ -12,8 +12,8 @@ $shadow: rgba(0, 0, 0, 0.3);
 
 // misc.
 $side-margin: 7vw;
-$media-breakpoint: 900px;
-$nav-height: 10vh;
+$media-breakpoint: 1000px;
+
 
 //
 // mixins & templates
@@ -85,4 +85,13 @@ body {
 // media
 //
 
-
+@media screen and (max-width: $media-breakpoint) {
+	.desktop {
+		display: none;
+	}
+}
+@media screen and (min-width: $media-breakpoint) {
+	.mobile {
+		display: none;
+	}
+}
