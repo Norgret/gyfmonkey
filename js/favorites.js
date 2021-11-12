@@ -25,7 +25,7 @@ function clearStorage() {
 }
 
 function render() {
-    let htmlArea = document.getElementById('testArea');
+    let htmlArea = document.getElementById('body-container');
     let htmlContent = '';
     savedGifs.forEach(element => {
         htmlContent += `<div class="video-view">
@@ -33,7 +33,8 @@ function render() {
             <source type="video/webm" src="https://i.giphy.com/media/${element}/giphy.mp4">
         </video>
         <div class="video-content">
-            <button onclick="remove('${element}')">Remove</button>
+        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${element}/giphy.mp4')"></i>
+            <i class="fas fa-times" onclick="remove('${element}')"></i>
             </div>
         </div>`;
     });
