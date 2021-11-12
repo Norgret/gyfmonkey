@@ -85,13 +85,4 @@ body {
 // media
 //
 
-@media screen and (max-width: $media-breakpoint) {
-	.desktop {
-		display: none;
-	}
-}
-@media screen and (min-width: $media-breakpoint) {
-	.mobile {
-		display: none;
-	}
-}
+
