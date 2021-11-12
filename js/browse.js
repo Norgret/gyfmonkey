@@ -12,14 +12,7 @@ function showSearch(info) {
     let gifHTML = '<div id="gifHolder">'
     //if only 1 gif is returned then doesn't need to loop
     if (info.data.length == undefined) {
-        gifHTML = `<div class="video-view">
-        <video autoplay loop muted class="video">
-            <source type="video/webm" src="https://i.giphy.com/media/${element}/giphy.mp4">
-        </video>
-        <div class="video-content">
-            <button onclick="remove('${element}')">Remove</button>
-            </div>
-        </div>
+        gifHTML = `<p>NO RESULTS</p>
         </div>`;
     }
 
@@ -34,7 +27,7 @@ function showSearch(info) {
         <div class="video-content">
         <i class="fas fa-heart" onclick = "favGif('${info.data[a].id}')" ></i>
         <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"></i>
-        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
             </div>
         </div>`
         }
