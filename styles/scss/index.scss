@@ -1,6 +1,8 @@
 @import 'main.scss';
 @import 'nav.scss';
 
+$navHeight: 10vh;
+
 #title-display {
 	@include flex-column;
 	justify-content: center;
@@ -10,7 +12,7 @@
 }
 
 #background-gif-display {
-	z-index: 0;
+	z-index: -1;
 	@include flex-row;
 	flex-wrap: wrap;
 	position: absolute;
@@ -49,9 +51,9 @@
 }
 
 .title-content {
-	z-index: 1;
 	.title {
 		color: $white;
 		letter-spacing: 0.4em;
+
 	}
 }
