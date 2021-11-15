@@ -13,6 +13,7 @@ $shadow: rgba(0, 0, 0, 0.3);
 // misc.
 $side-margin: 7vw;
 $media-breakpoint: 900px;
+$media-breakpoint: 1000px;
 $nav-height: 10vh;
 
 //
@@ -54,6 +55,10 @@ $nav-height: 10vh;
 body {
 	@include flex-column;
 	width: 100vw;
+	background-color: $darkgray;
+}
+a {
+	text-decoration: none;
 }
 
 .text {
