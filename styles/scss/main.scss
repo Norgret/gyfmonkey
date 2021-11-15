@@ -73,7 +73,7 @@
     i{
         font-size: 2.5vw;
     }
-    div{
+    #links{
         width:50%;
         @include flex-row;
         justify-content: space-between;
@@ -84,6 +84,10 @@
         border: 1px solid black;
         border-radius: 15%;
         height:1.5vw;
+    }
+    #searchButton{
+        width:6vw;
+        height:2vw;
     }
 }
 
