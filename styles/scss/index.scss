@@ -1,6 +1,11 @@
 @import 'main.scss';
 @import 'nav.scss';
 
+
+// #body-container {
+// 	@include flex-column;
+// }
+
 #title-display {
 	@include flex-column;
 	justify-content: center;
