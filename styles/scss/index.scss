@@ -29,6 +29,7 @@
 		@media screen and (max-width: $media-breakpoint) {
 			width: calc(100%/3);
 		}	// reduce dimensions to 3x3 on mobile
+			// * not optomized for mobile
 
 		.gif {
 			min-width: 100%;
