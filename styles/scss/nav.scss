@@ -1,7 +1,6 @@
 // styling for navbar
 
 @import '_global.scss';
-@import 'main.scss';
 
 #navbar {
 	@include flex-row;
@@ -36,7 +35,6 @@
 			background-color: $darkgray;
 			.text {font-weight: 600;}
 		}
-
 	}
 }
 
