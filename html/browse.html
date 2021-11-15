@@ -2,14 +2,14 @@
 <html>
 
 <head>
-	<link type='text/css' rel='stylesheet' href="../styles/css/main.css" />
+	<link type='text/css' rel='stylesheet' href="../styles/css/browse.css" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 	<title>Search Gifs</title>
 </head>
 
 <body onload="showResults()">
 
-	<div id="navigation">
+	<!-- <div id="navigation">
 		<i class="fas fa-align-justify" id="hamburger"></i>
 		<input type="text" id="search" placeholder="Search Here">
 		<button onclick="runSearch()">Search</button>
@@ -19,7 +19,31 @@
 			<a href="browse.html" id="active">Browse</a>
 			<i class="fas fa-user-circle"></i>
 		</div>
+	</div> -->
+	<div id='navbar'>
+		<div class='nav-btn mobile search-icon'>
+			<i>search icon</i>
+		</div>
+		<div class='nav-btn mobile menu-icon'>
+			<i class="icon fas fa-align-justify"></i>
+		</div>
+
+		<div id='search-bar' class='nav-btn desktop'>
+			<i>search</i>
+		</div>
+		<div class='navlinks-container desktop'>
+			<a class='active navlink desktop' href="index.html">
+				<p class='text link'>Home</p>
+			</a>
+			<a class='navlink desktop' href="browse.html">
+				<p class='text link'>Browse</p>
+			</a>
+			<a class='navlink desktop' href="favorites.html">
+				<p class='text link'>Favorites</p>
+			</a>
+		</div>
 	</div>
+	<div id=''
 
 
 	<div id='body-container'>

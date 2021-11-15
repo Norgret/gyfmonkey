@@ -1,12 +1,14 @@
+// styling for body of index.html
+
 @import 'main.scss';
 @import 'nav.scss';
+@import 'gif-preview.scss';
 
 #title-display {
 	@include flex-column;
 	justify-content: center;
 	align-items: center;
 	height: calc(100vh - #{$nav-height});
-	margin-top: 10vh;						// navbar padding
 }
 
 #background-gif-display {

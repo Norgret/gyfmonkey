@@ -44,21 +44,8 @@ $nav-height: 10vh;
 
 
 //
-// global styles
+// global styles templates
 //
-
-* {
-	margin: 0px;
-	padding: 0px;
-}
-body {
-	@include flex-column;
-	width: 100vw;
-	background-color: $darkgray;
-}
-a {
-	text-decoration: none;
-}
 
 .text {
 	color: $white;

@@ -1,3 +1,6 @@
+// styling for navbar
+
+@import '_global.scss';
 @import 'main.scss';
 
 #navbar {
@@ -37,7 +40,10 @@
 	}
 }
 
+#navbar-padding {
+	height: $nav-height;
+}
+
 #search-bar {
-	// width: 67%;
 	width: auto;
 }
