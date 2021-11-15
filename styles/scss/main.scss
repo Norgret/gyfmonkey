@@ -107,22 +107,23 @@
 }
 
 // CSS for the main body.
-#body-container{
-    padding-top:100px;
-    padding-bottom:50px;
-    background-color: $darkgray;
-    color:$lightgray;
-    width:100vw;
-    @include flex-row;
-    justify-content: space-around;
-    div{
-        width:45%;
-        @include flex-column;
-        align-items: center;
-    }
+/** this code breaks stuff **/
+// #body-container{
+//     padding-top:100px;
+//     padding-bottom:50px;
+//     background-color: $darkgray;
+//     color:$lightgray;
+//     width:100vw;
+//     @include flex-row;
+//     justify-content: space-around;
+//     div{
+//         width:45%;
+//         @include flex-column;
+//         align-items: center;
+//     }
 
 
-}
+// }
 //Media Query
 @media only screen and (max-width: 800px) {
 	#navigation div {

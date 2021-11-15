@@ -3,7 +3,7 @@ $lightgray: #DADFEA;
 $tan: #F5D790;
 $gray: #303240;
 $red: #DE023D;
-$lavendar: #B8C2F5;
+$lavender: #B8C2F5;
 $green: #A2F5B9;
 $darkgray: #17181F;
 $black: #000000;
@@ -11,7 +11,6 @@ $white: #ffffff;
 $shadow: rgba(0, 0, 0, 0.3);
 
 // misc.
-$side-margin: 7vw;
 $media-breakpoint: 1000px;
 $nav-height: 10vh;
 
@@ -54,6 +53,7 @@ $nav-height: 10vh;
 body {
 	@include flex-column;
 	width: 100vw;
+	background-color: $darkgray;
 }
 
 .text {
