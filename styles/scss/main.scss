@@ -5,6 +5,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+#gifHolder {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 .video-view {
     display: flex;
     position: relative;
@@ -52,9 +57,7 @@
 
 #navigation{
     background-color: $red;
-    position: fixed;
-	z-index: 1;
-    width:100vw;
+    width:100%;
     height:50px;
     font-size: 1.5vw;
     @include flex-row;
@@ -62,6 +65,7 @@
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-bottom: 25px solid #b60333;
     #active{
         color:$darkgray;
     }
@@ -121,18 +125,48 @@
 //         @include flex-column;
 //         align-items: center;
 //     }
-
-
 // }
-//Media Query
+#body-container{
+    color:$lightgray;
+    width:100%;
+    // @include flex-row;
+    // justify-content: space-around;
+    // div{
+    //     width:45%;
+    //     @include flex-column;
+    //     align-items: center;
+    // }
+
+// Media Queries
+// * optomize this later with mobile-only and desktop-only mixins
+// * can use navbar on index.html and nav.scss as reference
 @media only screen and (max-width: 800px) {
 	#navigation div {
 	  display:none;
 	}
+    #navigation{
+        justify-content: space-evenly;
+        #search{
+            height:4vw;
+            width:25vw;
+        }
+        i{
+            font-size: 5vw;
+        }
+    }
   }
 
   @media only screen and (min-width: 800px) {
 	#hamburger {
 	  display:none;
 	}
+    #navigation{
+        font-size: 2.5vw;
+        #search{
+            height:2vw;
+            width:15vw;
+        }
+    }
   }
+
+}
