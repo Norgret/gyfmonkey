@@ -1,0 +1,70 @@
+@import "main.scss";
+//css for the tooltip with arrow
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    .toolTipText {
+        visibility: hidden;
+        width: 90px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -45px;
+        transition: 0s 1s;
+      }
+      .toolTipText::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }
+  }
+  
+  .tooltip:active .toolTipText {
+    transition: 0s;
+    visibility: visible;
+  }
+
+//CSS for tooltip without arrow:
+
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+//     border-bottom: 1px dotted black;
+
+
+//     .toolTipText {
+//         visibility: hidden;
+//         width: 100px;
+//         background-color: black;
+//         color: #fff;
+//         text-align: center;
+//         border-radius: 6px;
+//         padding: 5px 0;
+    
+//         //tooltip positioning
+//         position: absolute;
+//         z-index: 1;
+//         bottom: 100%;
+//         margin-bottom: 10px;
+//         margin-left: -60px;
+
+//         transition: 0s 1s;
+//     }
+//   }
+
+//   .tooltip:active .toolTipText {
+//     transition: 0s;
+//     visibility: visible;
+//   }

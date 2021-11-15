@@ -43,7 +43,7 @@ function showSearch(info) {
                 </video>
         <div class="video-content">
         <i class="fas fa-heart" onclick = "favGif('${info.data[a].id}')" ></i>
-        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"></i>
+        <i class="fas fa-copy tooltip" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"><span class="toolTipText">Copied!</span></i>
         <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
             </div>
         </div>`
