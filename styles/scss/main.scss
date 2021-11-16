@@ -151,6 +151,7 @@ a {
 #body-container{
     color:$lightgray;
     width:100%;
+    margin-top:120px;
 }
     // @include flex-row;
     // justify-content: space-around;
@@ -173,13 +174,17 @@ a {
             height:4vw;
             width:25vw;
         }
+        #searchButton{
+            height:4vw;
+            width:10vw;
+        }
         i{
             font-size: 5vw;
         }
     }
   }
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 801px) {
 	#navigation #hamburger {
 	  display:none;
 	}
