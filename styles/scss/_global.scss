@@ -12,7 +12,6 @@ $shadow: rgba(0, 0, 0, 0.3);
 
 // misc.
 $side-margin: 7vw;
-$media-breakpoint: 900px;
 $media-breakpoint: 1000px;
 $nav-height: 10vh;
 
@@ -45,21 +44,8 @@ $nav-height: 10vh;
 
 
 //
-// global styles
+// global styles templates
 //
-
-* {
-	margin: 0px;
-	padding: 0px;
-}
-body {
-	@include flex-column;
-	width: 100vw;
-	background-color: $darkgray;
-}
-a {
-	text-decoration: none;
-}
 
 .text {
 	color: $white;
@@ -90,7 +76,7 @@ a {
 
 
 //
-// media
+// media queries
 //
 
 @media screen and (max-width: calc(#{$media-breakpoint} - 1px)) {
@@ -100,6 +86,17 @@ a {
 }
 @media screen and (min-width: $media-breakpoint) {
 	.mobile {
+		display: none;
+	}
+}
+
+@mixin desktop-only {
+	@media screen and (max-width: calc(#{$media-breakpoint} - 1px)) {
+		display: none;
+	}
+}
+@mixin mobile-only {
+	@media screen and (min-width: $media-breakpoint) {
 		display: none;
 	}
 }

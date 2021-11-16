@@ -1,18 +1,18 @@
+// styling for body of index.html
+
 @import 'main.scss';
 @import 'nav.scss';
-
-$navHeight: 10vh;
+@import 'gif-preview.scss';
 
 #title-display {
 	@include flex-column;
 	justify-content: center;
 	align-items: center;
 	height: calc(100vh - #{$nav-height});
-	margin-top: 10vh;						// navbar padding
 }
 
 #background-gif-display {
-	z-index: -1;
+	z-index: 0;
 	@include flex-row;
 	flex-wrap: wrap;
 	position: absolute;
@@ -31,6 +31,7 @@ $navHeight: 10vh;
 		@media screen and (max-width: $media-breakpoint) {
 			width: calc(100%/3);
 		}	// reduce dimensions to 3x3 on mobile
+			// * not optomized for mobile
 
 		.gif {
 			min-width: 100%;
@@ -51,9 +52,9 @@ $navHeight: 10vh;
 }
 
 .title-content {
+	z-index: 1;
 	.title {
 		color: $white;
 		letter-spacing: 0.4em;
-
 	}
 }

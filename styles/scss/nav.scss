@@ -1,4 +1,6 @@
-@import 'main.scss';
+// styling for navbar
+
+@import '_global.scss';
 
 #navbar {
 	@include flex-row;
@@ -13,8 +15,9 @@
 
 	.navlinks-container {
 		@include flex-row;
+		@include desktop-only;
 		justify-content: space-between;
-		width: 33%;
+		min-width: 33%;
 		height: 100%;
 
 		.navlink {
@@ -23,6 +26,7 @@
 			align-items: center;
 			height: 100%;
 			width: 100%;
+			min-width: 200px;
 		}
 		.navlink:hover {
 			background-color: $gray;
@@ -31,10 +35,13 @@
 			background-color: $darkgray;
 			.text {font-weight: 600;}
 		}
-
 	}
 }
 
+#navbar-padding {
+	height: $nav-height;
+}
+
 #search-bar {
-	width: 67%;
+	width: auto;
 }

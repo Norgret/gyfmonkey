@@ -2,18 +2,17 @@
 //  API functions
 //
 
-giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB";
+apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
+trendingGiphyURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`;
 
 async function getTrendingGifs(limit = 1) {
-    let response = await fetch(`${giphyURL}&limit=${limit}`);
+    let response = await fetch(`${trendingGiphyURL}&limit=${limit}`);
     let data = await response.json();
     return data;
 }
 
 async function getRandomGif() {
-
-
-    let response = await fetch("https://api.giphy.com/v1/gifs/random?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB");
+    let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
     let data = await response.json();
     return data;
 }

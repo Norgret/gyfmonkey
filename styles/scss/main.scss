@@ -1,4 +1,20 @@
+// global styles
+
 @import '_global.scss';
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    @include flex-column;
+    width: 100vw;
+    background-color: $darkgray;
+}
+a {
+    text-decoration: none;
+}
+
 
 #test {
     display: flex;
@@ -117,10 +133,25 @@
 }
 
 // CSS for the main body.
+/** this code breaks stuff **/
+// #body-container{
+//     padding-top:100px;
+//     padding-bottom:50px;
+//     background-color: $darkgray;
+//     color:$lightgray;
+//     width:100vw;
+//     @include flex-row;
+//     justify-content: space-around;
+//     div{
+//         width:45%;
+//         @include flex-column;
+//         align-items: center;
+//     }
+// }
 #body-container{
-    background-color: $darkgray;
     color:$lightgray;
     width:100%;
+}
     // @include flex-row;
     // justify-content: space-around;
     // div{
@@ -129,7 +160,9 @@
     //     align-items: center;
     // }
 
-//Media Query
+// Media Queries
+// * optomize this later with mobile-only and desktop-only mixins
+// * can use navbar on index.html and nav.scss as reference
 @media only screen and (max-width: 800px) {
 	#navigation #links {
 	  display:none;
@@ -147,7 +180,7 @@
   }
 
   @media only screen and (min-width: 800px) {
-	#hamburger {
+	#navigation #hamburger {
 	  display:none;
 	}
     #navigation{
@@ -159,4 +192,3 @@
     }
   }
 
-}
