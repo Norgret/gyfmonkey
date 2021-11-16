@@ -1,6 +1,5 @@
 let savedGifs = []
 if (localStorage.getItem('stored_GIFS') == null) {
-    console.log('works');
     savedGifs = [];
 }
 else {
