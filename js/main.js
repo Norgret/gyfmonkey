@@ -79,3 +79,10 @@ function showImg(info) {
 function copy(url) {
     navigator.clipboard.writeText(url)
 }
+
+//Hamburger Menu Code
+let hamMenu = document.getElementById('hamburger');
+
+hamMenu.onclick = function () {
+    alert('hi');
+}

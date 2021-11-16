@@ -111,6 +111,9 @@ a {
     }
 }
 
+#navbar-padding {
+	height: $nav-height;
+}
 
 // This is the css for the footer
 #footer{
@@ -151,7 +154,6 @@ a {
 #body-container{
     color:$lightgray;
     width:100%;
-    margin-top:120px;
 }
     // @include flex-row;
     // justify-content: space-around;
