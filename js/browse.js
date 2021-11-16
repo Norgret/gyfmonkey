@@ -28,8 +28,8 @@ function runSearch() { //Gets the data from the searchBar and then runs the show
 function showSearch(info) {
     let gifHTML = '<div id="gifHolder">'
     //if only 1 gif is returned then doesn't need to loop
-    if (info.data.length == undefined) {
-        gifHTML = `<p>NO RESULTS</p>
+    if (info.data.length == 0) {
+        gifHTML += `<p>NO RESULTS</p>
         </div>`;
     }
 
