@@ -1,7 +1,8 @@
-//this function gets the trending
+let apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
 
+//this function gets the trending
 async function getTrending() {
-    let response = await fetch("https://api.giphy.com/v1/gifs/trending?api_key=TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB&limit=20&rating=g") //'limit' controls how many will show, grabs trending
+    let response = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=15&`) //'limit' controls how many will show, grabs trending
     let data = await response.json()
     return data
 }

@@ -1,4 +1,6 @@
-@import 'main.scss';
+// styling for navbar
+
+@import '_global.scss';
 
 #navbar {
 	@include flex-row;
@@ -33,11 +35,13 @@
 			background-color: $darkgray;
 			.text {font-weight: 600;}
 		}
-
 	}
 }
 
+#navbar-padding {
+	height: $nav-height;
+}
+
 #search-bar {
-	// width: 67%;
 	width: auto;
 }

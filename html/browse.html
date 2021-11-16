@@ -10,7 +10,7 @@
 
 <body onload="showResults()">
 
-	<div id="navigation">
+	<!-- <div id="navigation">
 		<i class="fas fa-align-justify" id="hamburger"></i>
 		<input type="text" id="search" placeholder="Search Here">
 		<button onclick="runSearch()">Search</button>
@@ -20,7 +20,31 @@
 			<a href="browse.html" id="active">Browse</a>
 			<i class="fas fa-user-circle"></i>
 		</div>
+	</div> -->
+	<div id='navbar'>
+		<div class='nav-btn mobile search-icon'>
+			<i>search icon</i>
+		</div>
+		<div class='nav-btn mobile menu-icon'>
+			<i class="icon fas fa-align-justify"></i>
+		</div>
+
+		<div id='search-bar' class='nav-btn desktop'>
+			<i>search</i>
+		</div>
+		<div class='navlinks-container desktop'>
+			<a class='navlink desktop' href="index.html">
+				<p class='text link'>Home</p>
+			</a>
+			<a class='active navlink desktop' href="browse.html">
+				<p class='text link'>Browse</p>
+			</a>
+			<a class='navlink desktop' href="favorites.html">
+				<p class='text link'>Favorites</p>
+			</a>
+		</div>
 	</div>
+	<div id='navbar-padding'></div>
 
 
 	<div id='body-container'>
