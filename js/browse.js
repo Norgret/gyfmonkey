@@ -42,17 +42,46 @@ function showSearch(info) {
                     <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
                 </video>
         <div class="video-content">
-        <i class="fas fa-heart" onclick = "favGif('${info.data[a].id}')" ></i>
+        <button class="heartButton"onclick="favGif('${info.data[a].id}')"><i class="fas fa-heart" id="heart-${info.data[a].id}"></i></button>
         <i class="fas fa-copy tooltip" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"><span class="toolTipText">Copied!</span></i>
         <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
             </div>
         </div>`
+
         }
     }
-    gifHTML += `</div>`
+    /* 
+        original heart button: (wouldn't work so changed it to a button)
+        <i class="fas fa-heart" id="heart-${info.data[a].id}"onclick="favGif('${info.data[a].id}') toggleFavorite('${info.data[a].id}')" ></i>
+        New heart button:
+        <button class="heartButton"onclick="favGif('${info.data[a].id}')"><i class="fas fa-heart" id="heart-${info.data[a].id}"></i></button>
+        I removed the button styling so it looks just like the original heart button but
+        is now able to change colors
+
+    */
+
+
+
+    gifHTML += `</div>`;
+    //sets the html of the gifs searched
     document.getElementById('body-container').innerHTML = gifHTML;
+    //if there are gifs in the storage runs the code
+    if (localStorage.getItem('stored_GIFS') !== null) {
+        //gets the currentFavorites from the local storage
+        let currentFavorites = JSON.parse(localStorage.getItem('stored_GIFS'))
+        //loops through each one, tries to find the id
+        for (let a = 0; a < currentFavorites.length; a++) {
+            try { //if found, changes color
+                document.getElementById(`heart-${currentFavorites[a]}`).style.color = 'pink';
+                console.log('color changed');
+            }
+            catch { //if not found nothing happens
+                console.log('not there');
+            }
+        }
+    }
 }
 
 function copy(url) {
-    navigator.clipboard.writeText(url)
+    navigator.clipboard.writeText(url);
 }

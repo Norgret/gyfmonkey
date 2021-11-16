@@ -7,14 +7,21 @@ else {
     console.log(savedGifs);
 }
 
-function favGif(id) {
+function favGif(id) { //adds the gif to the storage and changes the color of the heart
     if (savedGifs.indexOf(id) == -1) {
         savedGifs.push(id);
         console.log(savedGifs);
+        //gets the id of the font awesome heart by the id given to it and changes color
+        document.getElementById('heart-' + id).style.color = 'pink';
         localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
     }
-    else {
-        console.log('gif already added');
+    else {//removes the gif from the storage and changed heart back to normal
+        let toGoIndex = savedGifs.indexOf(id);
+        savedGifs.splice(toGoIndex, 1);
+        console.log('gif removed');
+        console.log(savedGifs);
+        localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+        document.getElementById('heart-' + id).style.color = 'black';
     }
 }
 
