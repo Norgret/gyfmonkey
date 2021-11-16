@@ -17,34 +17,30 @@ function runSearch() {
     getSearch(searchBar.value).then(data => renderGifPreview(data));
 }
 
-function renderGifPreview(info) {
-    let gifHTML = '<div id="gifHolder">'
-    //if only 1 gif is returned then doesn't need to loop
-    if (!info.data.length) {
-        gifHTML = `<p>NO RESULTS</p>
-        </div>`;
-    }
+function renderGifPreview(gifs) {
 
-    //if there is a list of gifs then runs a loop
-    else {
-        for (let a = 0; a < info.data.length; a++) { //loops through each gif and creates some html for each one
+    // location.href = "browse.html";
 
-            gifHTML += `<div class="video-view">
-            <video autoplay loop muted class="video">
-                    <source type="video/webm" src="https://i.giphy.com/media/${info.data[a].id}/giphy.mp4">
-                </video>
-        <div class="video-content">
-        <i class="fas fa-heart" onclick = "favGif('${info.data[a].id}')" ></i>
-        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"></i>
-        <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
+    let preview = document.getElementById('dynamic-gifs-display');
+
+    gifs.data.forEach((gif) => {
+        console.log(gif);
+        preview.innerHTML += `
+        <div class='gif-preview'>
+            <video autoplay loop muted class='media'>
+                <source type='video/webm' src="https://i.giphy.com/media/${gif.id}/giphy.mp4">
+            </video>
+            <div class='media-overlay'>
+                <i class='btn fas fa-heart' onclick = "likeGif('${gif.id}')" ></i>
+                <i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
+                <i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
             </div>
-        </div>`
-        }
-    }
-    gifHTML += `</div>`
-    document.getElementById('body-container').innerHTML = gifHTML;
+        </div>
+        `;
+    });
+
 }
 
 function copyToClipboard(url) {
-    navigator.clipboard.writeText(url)
+    navigator.clipboard.writeText(url);
 }

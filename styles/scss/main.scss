@@ -145,13 +145,8 @@ a {
 #body-container{
     color:$lightgray;
     width:100%;
-    // @include flex-row;
-    // justify-content: space-around;
-    // div{
-    //     width:45%;
-    //     @include flex-column;
-    //     align-items: center;
-    // }
+    // margin-top:120px;
+}
 
 // Media Queries
 // * optomize this later with mobile-only and desktop-only mixins
