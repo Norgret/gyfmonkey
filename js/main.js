@@ -82,12 +82,27 @@ function copy(url) {
 
 //Hamburger Menu Code
 let hamMenu = document.getElementById('hamburger');
+let dropMod = document.getElementById('drop-down-nav');
+
+let activeMenu = false;
 
 hamMenu.onclick = function () {
-    document.getElementById('drop-down-nav').innerHTML += `<div><div id="links">
+    if (activeMenu == false) {
+        dropMod.innerHTML += `<div id="links">
     <a href="favorites.html">Favorites</a>
     <a href="gifinfo.html">Gif Info</a>
-    <a href="browse.html" id="active">Browse</a>
-    <i class="fas fa-user-circle"></i>
-</div></div>`
+    <a href="browse.html">Browse</a>
+</div>`;
+        dropMod.style.height = "11vw";
+        dropMod.style.width = "100%";
+        dropMod.style.width = "100%";
+        dropMod.style.marginTop = "14vw";
+        dropMod.style.position = "fixed";
+        activeMenu = true;
+    }
+    else if (activeMenu == true) {
+        document.getElementById('drop-down-nav').innerHTML = ``;
+        dropMod.style.height = "0vw";
+        activeMenu = false;
+    }
 }
