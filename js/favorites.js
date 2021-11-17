@@ -33,7 +33,7 @@ function render() {
             <source type="video/webm" src="https://i.giphy.com/media/${element}/giphy.mp4">
         </video>
         <div class="video-content">
-        <i class="fas fa-copy" onclick = "copy('https://i.giphy.com/media/${element}/giphy.gif')"></i>
+        <i class="fas fa-copy tooltip" onclick = "copy('https://i.giphy.com/media/${element}/giphy.gif')"><span class="toolTipText">Copied!</span></i>
         <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
             <i class="fas fa-times" onclick="remove('${element}')"></i>
             </div>
