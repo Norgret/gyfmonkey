@@ -84,5 +84,10 @@ function copy(url) {
 let hamMenu = document.getElementById('hamburger');
 
 hamMenu.onclick = function () {
-    alert('hi');
+    document.getElementById('drop-down-nav').innerHTML += `<div><div id="links">
+    <a href="favorites.html">Favorites</a>
+    <a href="gifinfo.html">Gif Info</a>
+    <a href="browse.html" id="active">Browse</a>
+    <i class="fas fa-user-circle"></i>
+</div></div>`
 }
