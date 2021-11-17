@@ -133,7 +133,6 @@ a {
 //     padding-bottom:50px;
 //     background-color: $darkgray;
 //     color:$lightgray;
-//     width:100vw;
 //     @include flex-row;
 //     justify-content: space-around;
 //     div{
@@ -165,9 +164,9 @@ a {
             font-size: 5vw;
         }
     }
-  }
+}
 
-  @media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) {
 	#hamburger {
 	  display:none;
 	}
@@ -178,6 +177,4 @@ a {
             width:15vw;
         }
     }
-  }
-
 }

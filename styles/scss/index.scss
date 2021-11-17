@@ -4,6 +4,19 @@
 @import 'nav.scss';
 @import 'gif-preview.scss';
 
+//
+// body styles
+//
+
+#body-container {
+	margin: 0 $side-margin 0 $side-margin;
+}
+
+
+//
+// landing title styles
+//
+
 #title-display {
 	@include flex-column;
 	justify-content: center;
@@ -12,7 +25,6 @@
 }
 
 #background-gif-display {
-	z-index: -1;
 	@include flex-row;
 	flex-wrap: wrap;
 	position: absolute;
@@ -20,8 +32,9 @@
 	height: calc(100vh - #{$nav-height});
 	background-color: $black;
 	overflow: hidden;
+	z-index: -1;
 
-	box-shadow: $default-box-shadow;
+	box-shadow: $default-box-shadow-heavy;
 
 	.gif-container {
 		@include flex-column;
@@ -62,12 +75,17 @@
 }
 
 
+//
+// gif browsing previews display
+//
+
 #dynamic-gifs-display {
 	@include flex-row;
+
 	flex-wrap: wrap;
 	justify-content: left;
 	align-items: space-between;
-	margin: 0 $side-margin 0 $side-margin;
+	// margin: 0 $side-margin 0 $side-margin;
 
 	.gif-preview {
 		margin: 20px;

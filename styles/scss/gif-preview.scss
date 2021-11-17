@@ -2,25 +2,77 @@
 
 @import '_global.scss';
 
-.gif-preview {
-	display: flex;
-	width: 300px;
-	height: 300px;
+$preview-size: 300px;
+$thumbnail-size: 150px;
 
+// regular-sized gif preview
+.gif-preview {
+	width: $preview-size;
+	height: $preview-size;
+	.media {
+		width: $preview-size;
+		height: $preview-size;
+	}
+}
+
+// thumbnail-sized gif preview
+.gif-thumbnail {
+	width: $thumbnail-size;
+	height: $thumbnail-size;
+	.media {
+		width: $thumbnail-size;
+		height: $thumbnail-size;
+	}
+}
+
+// dynamic width
+.gif-preview-dynamic-width {
+	width: auto;
+	height: $preview-size;
+	.media {
+		width: auto;
+		height: $preview-size;
+	}
+}
+
+// dynamic height
+.gif-preview-dynamic-height {
+	width: $preview-size;
+	height: max-content;
+	.media {
+		width: $preview-size;
+		height: auto;
+	}
+}
+
+// dynamically-sized gif preview
+.gif-preview-dynamic {
+	width: auto;
+	height: auto;
+	.media {
+		width: auto;
+		height: auto;
+	}
+}
+
+
+.preview {
+	position: relative;
+	margin: 20px;
 	box-shadow: $default-box-shadow;
 
 	.media {
-		position: absolute;
+		display: block;
 		object-fit: cover;
-		width: 300px;
-		height: 300px;
 		overflow: hidden;
 		z-index: 0;
 	}
 
 	.media-overlay {
+		position: absolute;
+		bottom: 0;
+
 		@include flex-row;
-		align-self: flex-end;
         align-items: center;
         justify-content: space-around;
 		width: 100%;
@@ -52,4 +104,3 @@
 		visibility: visible;
 	}
 }
-
