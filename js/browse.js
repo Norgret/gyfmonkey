@@ -73,7 +73,6 @@ function showSearch(info) {
         for (let a = 0; a < currentFavorites.length; a++) {
             try { //if found, changes color
                 document.getElementById(`heart-${currentFavorites[a]}`).style.color = 'pink';
-                console.log('color changed');
             }
             catch { //if not found nothing happens
                 console.log('not there');
