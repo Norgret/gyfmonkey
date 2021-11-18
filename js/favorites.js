@@ -36,7 +36,7 @@ function render() {
         </video>
         <div class="video-content">
         <i class="fas fa-copy tooltip" onclick = "copy('https://i.giphy.com/media/${element}/giphy.gif')"><span class="toolTipText">Copied!</span></i>
-        <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
+        <i class="fas fa-info-circle" onclick="getInfo('${element}')"></i>
             <i class="fas fa-times" onclick="remove('${element}')"></i>
             </div>
         </div>`;
