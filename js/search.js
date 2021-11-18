@@ -14,32 +14,9 @@ async function getSearch(query, number = 30) { //the API call
 
 // run search on search bar value
 function runSearch() {
-    getSearch(searchBar.value).then(data => renderGifPreview(data));
+    getSearch(searchBar.value).then(data => renderDynamicGifDisplay(data));
 }
 
-function renderGifPreview(gifs) {
-
-    // location.href = "browse.html";
-
-    let preview = document.getElementById('dynamic-gifs-display');
-
-    gifs.data.forEach((gif) => {
-        console.log(gif);
-        preview.innerHTML += `
-        <div class='gif-preview'>
-            <video autoplay loop muted class='media'>
-                <source type='video/webm' src="https://i.giphy.com/media/${gif.id}/giphy.mp4">
-            </video>
-            <div class='media-overlay'>
-                <i class='btn fas fa-heart' onclick = "likeGif('${gif.id}')" ></i>
-                <i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
-                <i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
-            </div>
-        </div>
-        `;
-    });
-
-}
 
 function copyToClipboard(url) {
     navigator.clipboard.writeText(url);

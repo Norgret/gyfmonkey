@@ -1,50 +1,76 @@
-//
-//  API functions
-//
+
+/*
+ *	API functions, networking
+ */
 
 apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
 trendingGiphyURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`;
 monkeyGiphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=monkey`;
+_browseResultsOffset = 0;
 
-async function getTrendingGifs(limit = 1, monkey = false) {
+async function getTrendingGifs(limit = 1, offset = _browseResultsOffset, monkey = false) {
+	if (! monkey) _browseResultsOffset += limit;
 
-    let response = monkey ?
-        await fetch(`${monkeyGiphyURL}&limit=${limit}`) :
-        await fetch(`${trendingGiphyURL}&limit=${limit}`);
+	// get monkey-related gifs if monkey == true
+	let queries = `limit=${limit}&offset=${offset}`;
+	let response = monkey ?
+		await fetch(`${monkeyGiphyURL}&${queries}`) :
+		await fetch(`${trendingGiphyURL}&${queries}`);
 
-    let data = await response.json();
-    return data;
+	let data = await response.json();
+	return data;
 }
 
-async function getRandomGif() {
-    let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
-    let data = await response.json();
-    return data;
-}
 
-//
-//  Render backgroud gif display
-//
+/*
+ *	Render backgroud gif display
+ */
 
 let backgroundGifDisplay = document.getElementById('background-gif-display');
 
+// later, will optomize for mobile
+// * mobile only requires 9 background gifs, so should only render 9 gifs
 function renderBackgroundDisplay(mobile = false) {
-    let limit;
-    if (mobile) limit = 9;
-    else limit = 15;
-    getTrendingGifs(limit, monkey = true).then((gifs) => {    // execute callback on 15 gif objects
-        console.log(gifs);
-        for (let gif of gifs.data) {
-            console.log(gif);
-            backgroundGifDisplay.innerHTML += `
-                <div class='gif-container'>
-                    <video autoplay loop muted class="gif">
-                        <source type="video/webm" src="${gif.images.preview.mp4}">
-                    </video>
-                </div>
-            `;
-        }
-    });
+	let limit = mobile ? 9 : 15;
+	getTrendingGifs(limit, 0, monkey = true).then((gifs) => {    // execute callback on 15 gif objects
+		backgroundGifDisplay.style = 'display: none';
+		for (let gif of gifs.data) {
+			backgroundGifDisplay.innerHTML += `
+				<div class='gif-container'>
+					<video autoplay loop muted class="gif">
+						<source type="video/webm" src="${gif.images.preview.mp4}">
+					</video>
+				</div>
+			`;
+		}
+		backgroundGifDisplay.style = 'display: visible';
+	});
 }
-
 renderBackgroundDisplay();
+
+
+/*
+ *	Get HTML for gif previews
+ */
+
+// valid display parameter can be:
+//	'gif-thumbnail'
+//	'gif-preview'
+//	'gif-preview-dynamic'
+//	'gif-preview-dynamic-height'
+//	'gif-preview-dynamic-width'
+function getGifPreviewHTML(gif, display = '') {
+	let previewTag =
+		`<div class='preview ${display}'>
+			<video autoplay loop muted class='media'>
+				<source type='video/webm' src="https://i.giphy.com/media/${gif.id}/giphy.mp4">
+			</video>
+			<div class='media-overlay'>
+				<i class='btn fas fa-heart' onclick = "likeGif('${gif.id}')" ></i>
+				<i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
+				<i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
+			</div>
+		</div>`;
+
+	return previewTag;
+}

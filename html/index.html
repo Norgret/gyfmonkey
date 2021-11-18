@@ -60,19 +60,22 @@
 
 		<!-- Landing page content -->
 		<div id='main-content' class='content body-content'>
-			body content
 
-			<div class='trending-gif-preview'>
-
+			<div class='banana-gif-preview'>
+				<h1 class='text subtitle'>Banana Gifs</h1>
+				<div class='side-scroll-gif-display' id='banana-gifs-display'></div>
 			</div>
 
-			<div class='favorites-gif-preview'></div>
+			<div class='favorite-gif-preview'>
+				<h1 class='text subtitle'>Your Favorite Gifs</h1>
+				<div class='side-scroll-gif-display' id='favorite-gifs-display'></div>
+			</div>
 
 			<div id='dynamic-gifs-display'>
 
-		        <div class='preview gif-preview'>
+		        <!-- <div class='preview gif-preview'>
 		            <video autoplay loop muted class='media'>
-		                <source type='video/webm' src="https://i.giphy.com/media/GW31NbeI4kmqY/giphy.mp4">
+		               	<source type='video/webm' src="https://i.giphy.com/media/GW31NbeI4kmqY/giphy.mp4">
 		            </video>
 		            <div class='media-overlay'>
 		                <i class='toggled btn fas fa-heart' onclick = "favGif('${gif.id}')" ></i>
@@ -90,7 +93,7 @@
 		                <i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
 		                <i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
 		            </div>
-		        </div>
+		        </div> -->
 
 			</div>
 		</div>
@@ -100,6 +103,7 @@
 	<script src="../js/main.js"></script>
 	<script src="../js/index.js"></script>
 	<script src="../js/search.js"></script>
+	<script src="../js/dynamic-display.js"></script>
 </body>
 
 </html>

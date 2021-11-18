@@ -4,6 +4,7 @@
 
 $preview-size: 300px;
 $thumbnail-size: 150px;
+$preview-margin: 10px;
 
 // regular-sized gif preview
 .gif-preview {
@@ -38,7 +39,7 @@ $thumbnail-size: 150px;
 // dynamic height
 .gif-preview-dynamic-height {
 	width: $preview-size;
-	height: max-content;
+	height: auto;
 	.media {
 		width: $preview-size;
 		height: auto;
@@ -58,7 +59,8 @@ $thumbnail-size: 150px;
 
 .preview {
 	position: relative;
-	margin: 20px;
+	margin: $preview-margin;
+	background-color: $darkgray;
 	box-shadow: $default-box-shadow;
 
 	.media {

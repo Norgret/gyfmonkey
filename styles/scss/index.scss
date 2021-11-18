@@ -8,8 +8,8 @@
 // body styles
 //
 
-#body-container {
-	margin: 0 $side-margin 0 $side-margin;
+#main-content {
+	margin: $nav-height $side-margin 0 $side-margin;
 }
 
 
@@ -79,15 +79,32 @@
 // gif browsing previews display
 //
 
+.side-scroll-gif-display {
+	height: $preview-size;
+
+}
+
+.banana-gif-preview {
+
+}
+#banana-gifs-display {
+	border-top: 3px solid $green;
+}
+
+.favorite-gif-preview {
+
+}
+#favorite-gifs-display {
+	border-top: 3px solid $red;
+}
+
+
 #dynamic-gifs-display {
 	@include flex-row;
-
-	flex-wrap: wrap;
-	justify-content: left;
-	align-items: space-between;
-	// margin: 0 $side-margin 0 $side-margin;
-
-	.gif-preview {
-		margin: 20px;
-	}
+	justify-content: center;
+	align-items: flex-start;
+	overflow-x: hidden;
+	// box-shadow: inset $default-box-shadow-light;
+	border-top: 3px solid $tan;
+	padding: 50px;
 }
