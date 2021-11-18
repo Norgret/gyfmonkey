@@ -71,40 +71,67 @@ a {
 
 // Navigation CSS + top bar
 
-#navigation{
-	background-color: $red;
-	width:100%;
-	height:50px;
-	font-size: 1.5vw;
-	@include flex-row;
-	justify-content: space-around;
-	align-items: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border-bottom: 25px solid #b60333;
-	#active{
-		color:$darkgray;
-	}
-	a{
-	color:$lightgray;
-	text-decoration: none;
-	}
-	i{
-		font-size: 2.5vw;
-	}
-	div{
-		width:50%;
-		@include flex-row;
-		justify-content: space-between;
-		align-items: center;
-	}
-	#search{
-		width:10%;
-		border: 1px solid black;
-		border-radius: 15%;
-		height:1.5vw;
-	}
+#drop-down-nav{
+    color:$white;
+    background-color:$red;
+    border-bottom: 2px solid $darkgray;
+     div{
+        @include flex-row;
+        justify-content: space-evenly;
+        align-items: center;
+        height:100%;
+    }
+    a, i{
+        text-decoration: none;
+        color:$white;
+        font-size: 3.5vw;
+    }
 }
+
+#navigation{
+    background-color: $red;
+    width:100%;
+    height:5vw;
+    font-size: 1.5vw;
+    @include flex-row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 25px solid #b60333;
+    position:fixed;
+    #active{
+        color:$darkgray;
+    }
+    a{
+    color:$lightgray;
+    text-decoration: none;
+    }
+    i{
+        font-size: 2.5vw;
+    }
+    #links{
+        width:50%;
+        @include flex-row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #search{
+        width:10vw;
+        border: 1px solid black;
+        border-radius: 15%;
+        height:1.5vw;
+    }
+    #searchButton{
+        width:6vw;
+        height:2vw;
+    }
+}
+
+#navbar-padding {
+	height: 12vw;
+}
+
 
 // This is the css for the footer
 #footer{
@@ -126,55 +153,61 @@ a {
 
 }
 
-// CSS for the main body.
-/** this code breaks stuff **/
-// #body-container{
-//     padding-top:100px;
-//     padding-bottom:50px;
-//     background-color: $darkgray;
-//     color:$lightgray;
-//     @include flex-row;
-//     justify-content: space-around;
-//     div{
-//         width:45%;
-//         @include flex-column;
-//         align-items: center;
-//     }
-// }
 #body-container{
-	color:$lightgray;
-	width:100%;
-	// margin-top:120px;
+    color:$lightgray;
+    width:100%;
 }
 
 // Media Queries
 // * optomize this later with mobile-only and desktop-only mixins
 // * can use navbar on index.html and nav.scss as reference
 @media only screen and (max-width: 800px) {
-	#navigation div {
+	#navigation #links {
 	  display:none;
 	}
-	#navigation{
-		justify-content: space-evenly;
-		#search{
-			height:4vw;
-			width:25vw;
-		}
-		i{
-			font-size: 5vw;
-		}
-	}
+	// #navigation{
+	// 	justify-content: space-evenly;
+	// 	#search{
+	// 		height:4vw;
+	// 		width:25vw;
+	// 	}
+	// 	i{
+	// 		font-size: 5vw;
+	// 	}
+	// }
 }
 
-@media only screen and (min-width: 800px) {
-	#hamburger {
+
+#navigation{
+    justify-content: space-evenly;
+    #search{
+        height:4vw;
+        width:25vw;
+    }
+    #searchButton{
+        height:4vw;
+        width:10vw;
+    }
+    i{
+        font-size: 5vw;
+    }
+}
+#navbar-padding{
+    height:17vw;
+}
+#footer{
+    font-size: 2.5vw;
+}
+
+@media only screen and (min-width: 801px) {
+	#navigation #hamburger {
 	  display:none;
 	}
-	#navigation{
-		font-size: 2.5vw;
-		#search{
-			height:2vw;
-			width:15vw;
-		}
-	}
+    #navigation{
+        font-size: 2.5vw;
+        #search{
+            height:2vw;
+            width:15vw;
+        }
+    }
 }
