@@ -1,21 +1,23 @@
 let savedGifs = []
 if (localStorage.getItem('stored_GIFS') == null) {
-    console.log('works');
     savedGifs = [];
 }
 else {
     savedGifs = JSON.parse(localStorage.getItem('stored_GIFS'));
-    console.log(savedGifs);
 }
 
-function favGif(id) {
+function favGif(id) { //adds the gif to the storage and changes the color of the heart
     if (savedGifs.indexOf(id) == -1) {
         savedGifs.push(id);
-        console.log(savedGifs);
+        //gets the id of the font awesome heart by the id given to it and changes color
+        document.getElementById('heart-' + id).style.color = 'pink';
         localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
     }
-    else {
-        console.log('gif already added');
+    else {//removes the gif from the storage and changed heart back to normal
+        let toGoIndex = savedGifs.indexOf(id);
+        savedGifs.splice(toGoIndex, 1);
+        localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+        document.getElementById('heart-' + id).style.color = 'black';
     }
 }
 
@@ -47,7 +49,6 @@ function remove(gifToGo) {
     let index = savedGifs.indexOf(gifToGo);
     savedGifs.splice(index, 1);
     localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
-    console.log(JSON.parse(localStorage.getItem('stored_GIFS')));
     render();
 }
 /* HTML code to show the gifs when the page loads
