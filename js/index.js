@@ -32,8 +32,8 @@ let backgroundGifDisplay = document.getElementById('background-gif-display');
 // * mobile only requires 9 background gifs, so should only render 9 gifs
 function renderBackgroundDisplay(mobile = false) {
 	let limit = mobile ? 9 : 15;
-	getTrendingGifs(limit, 0, monkey = true).then((gifs) => {    // execute callback on 15 gif objects
-		backgroundGifDisplay.style = 'display: none';
+	getTrendingGifs(limit, 0, monkey = true).then((gifs) => {	// execute callback on 15 gif objects
+		backgroundGifDisplay.style = 'display: none';			// hide all gif previews until loaded onto DOM
 		for (let gif of gifs.data) {
 			backgroundGifDisplay.innerHTML += `
 				<div class='gif-container'>

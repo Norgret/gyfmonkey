@@ -3,64 +3,64 @@
 @import '_global.scss';
 
 * {
-    margin: 0px;
-    padding: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 body {
-    @include flex-column;
-    width: 100vw;
-    background-color: $darkgray;
+	@include flex-column;
+	width: 100vw;
+	background-color: $darkgray;
 }
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 
 #test {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 #gifHolder {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 .video-view {
-    display: flex;
-    position: relative;
-    width: 300px;
-    height: 300px;
-    .video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background-color: #ccc;
-    }
-    .video:hover + .video-content{
-        visibility: visible;
-    }
-    .video-content:hover {
-        visibility: visible;
-    }
-    .video-content {
-        height: 25px;
-        display: flex;
-        visibility: hidden;
-        background-color: rgb(65, 65, 65);
-        opacity: 80%;
-        width: 100%;
-        margin: 5px; //margin around button container
-        align-self: flex-end;
-        align-items: center;
-        justify-content: space-around;
-        z-index: 1;
-        i {
-            color: black;
-        }
+	display: flex;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	.video {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background-color: #ccc;
+	}
+	.video:hover + .video-content{
+		visibility: visible;
+	}
+	.video-content:hover {
+		visibility: visible;
+	}
+	.video-content {
+		height: 25px;
+		display: flex;
+		visibility: hidden;
+		background-color: rgb(65, 65, 65);
+		opacity: 80%;
+		width: 100%;
+		margin: 5px; //margin around button container
+		align-self: flex-end;
+		align-items: center;
+		justify-content: space-around;
+		z-index: 1;
+		i {
+			color: black;
+		}
 
-    }
+	}
 }
 
 
@@ -72,57 +72,57 @@ a {
 // Navigation CSS + top bar
 
 #navigation{
-    background-color: $red;
-    width:100%;
-    height:50px;
-    font-size: 1.5vw;
-    @include flex-row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 25px solid #b60333;
-    #active{
-        color:$darkgray;
-    }
-    a{
-    color:$lightgray;
-    text-decoration: none;
-    }
-    i{
-        font-size: 2.5vw;
-    }
-    div{
-        width:50%;
-        @include flex-row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    #search{
-        width:10%;
-        border: 1px solid black;
-        border-radius: 15%;
-        height:1.5vw;
-    }
+	background-color: $red;
+	width:100%;
+	height:50px;
+	font-size: 1.5vw;
+	@include flex-row;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 25px solid #b60333;
+	#active{
+		color:$darkgray;
+	}
+	a{
+	color:$lightgray;
+	text-decoration: none;
+	}
+	i{
+		font-size: 2.5vw;
+	}
+	div{
+		width:50%;
+		@include flex-row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#search{
+		width:10%;
+		border: 1px solid black;
+		border-radius: 15%;
+		height:1.5vw;
+	}
 }
 
 // This is the css for the footer
 #footer{
 
-    background-color: $red;
-    width:100%;
-    height:50px;
-    font-size: .8vw;
-    @include flex-row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+	background-color: $red;
+	width:100%;
+	height:50px;
+	font-size: .8vw;
+	@include flex-row;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
 
-    a{
-        color:$lightgray;
-        text-decoration: none;
-    }
+	a{
+		color:$lightgray;
+		text-decoration: none;
+	}
 
 }
 
@@ -142,9 +142,9 @@ a {
 //     }
 // }
 #body-container{
-    color:$lightgray;
-    width:100%;
-    // margin-top:120px;
+	color:$lightgray;
+	width:100%;
+	// margin-top:120px;
 }
 
 // Media Queries
@@ -154,27 +154,27 @@ a {
 	#navigation div {
 	  display:none;
 	}
-    #navigation{
-        justify-content: space-evenly;
-        #search{
-            height:4vw;
-            width:25vw;
-        }
-        i{
-            font-size: 5vw;
-        }
-    }
+	#navigation{
+		justify-content: space-evenly;
+		#search{
+			height:4vw;
+			width:25vw;
+		}
+		i{
+			font-size: 5vw;
+		}
+	}
 }
 
 @media only screen and (min-width: 800px) {
 	#hamburger {
 	  display:none;
 	}
-    #navigation{
-        font-size: 2.5vw;
-        #search{
-            height:2vw;
-            width:15vw;
-        }
-    }
+	#navigation{
+		font-size: 2.5vw;
+		#search{
+			height:2vw;
+			width:15vw;
+		}
+	}
 }
