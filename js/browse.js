@@ -12,7 +12,7 @@ async function getSearch(search, number = 50) { //the API call
 }
 function loadBrowsePage() { //runs when a search bar is used from a page that isn't browse.html
     localStorage.setItem('searchTerm', document.getElementById('search').value);
-    document.location.href = 'http://127.0.0.1:5500/html/browse.html';
+    document.location.href = '../html/browse.html';
 }
 function showResults() { //runs when the page loads
     if (localStorage.getItem('searchTerm') !== null) {//runs if the local storage is not empty(means the search was made from the browse.js page)
@@ -87,5 +87,5 @@ function copy(url) {
 
 function getInfo(id) {
     localStorage.setItem('currentGifInfo', JSON.stringify(id))
-    document.location.href = 'http://127.0.0.1:5500/html/gifinfo.html'
+    document.location.href = '../html/gifinfo.html'
 }
