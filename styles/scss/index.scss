@@ -91,6 +91,7 @@
 	height: calc(#{$preview-size} + #{$preview-margin} * 2);
 	width: 100%;
 	overflow-x: scroll;
+	overflow-y: hidden;
 	box-shadow: inset $default-box-shadow-heavy;
 }
 

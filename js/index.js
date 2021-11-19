@@ -12,8 +12,11 @@ let _browseResultsOffset = 0;
 
 async function loadGifs(limit, offset = 0, query = null) {
 	let response = query ?
-		await fetch(`${searchGiphyURL}&offset=${offset}&q=${query}`) :
-		await fetch(`${trendingGiphyURL}&offset=${offset}`);
+		await fetch(`${searchGiphyURL}&limit=${limit}&offset=${offset}&q=${query}`) :
+		await fetch(`${trendingGiphyURL}&limit=${limit}&offset=${offset}`);
+
+	let data = await response.json();
+	return data.data;
 }
 
 async function getTrendingGifs(limit = 1, offset = _browseResultsOffset, monkey = false) {
@@ -26,7 +29,7 @@ async function getTrendingGifs(limit = 1, offset = _browseResultsOffset, monkey 
 		await fetch(`${trendingGiphyURL}&${queries}`);
 
 	let data = await response.json();
-	return data;
+	return data.data;
 }
 
 
@@ -42,7 +45,7 @@ function renderBackgroundDisplay(mobile = false) {
 	let limit = mobile ? 9 : 15;
 	getTrendingGifs(limit, 0, monkey = true).then((gifs) => {	// execute callback on 15 gif objects
 		backgroundGifDisplay.style = 'display: none';			// hide all gif previews until loaded onto DOM
-		for (let gif of gifs.data) {
+		for (const gif of gifs) {
 			backgroundGifDisplay.innerHTML += `
 				<div class='gif-container'>
 					<video autoplay loop muted class="gif">

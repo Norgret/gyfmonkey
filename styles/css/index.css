@@ -549,6 +549,7 @@ a {
   height: calc(300px + 10px * 2);
   width: 100%;
   overflow-x: scroll;
+  overflow-y: hidden;
   box-shadow: inset 7px 7px 15px rgba(0, 0, 0, 0.3);
 }
 

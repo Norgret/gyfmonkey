@@ -70,7 +70,7 @@ let dynamicGifDisplay = new DynamicGifDisplay();
 
 // accepts data object returned by API
 function renderDynamicGifDisplay(gifs) {
-	gifs.data.forEach(gif => dynamicGifDisplay.append(gif));
+	gifs.forEach(gif => dynamicGifDisplay.append(gif));
 }
 
 
