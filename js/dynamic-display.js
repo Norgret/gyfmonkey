@@ -7,7 +7,7 @@
 class DynamicGifDisplay {
 
 	constructor() {
-		this.columnWidth = 300; // width in px
+		this.columnWidth = 320; // width in px: 300px + 2 * margin
 		this.columnsContainer = document.getElementById('dynamic-gifs-display');
 		this.numColumns = Math.floor(this.columnsContainer.clientWidth / this.columnWidth);
 		this.columns = [];      // contains {height, get()} objects
@@ -92,8 +92,8 @@ function handler() {
 	const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
 	const threshold = 1500;
 	if (scrollTop + clientHeight > scrollHeight - threshold) {
-		console.log(scrollTop + clientHeight, scrollHeight - threshold, "done");
 		loadContent();
 	}
 }
+
 

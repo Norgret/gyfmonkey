@@ -3,10 +3,18 @@
  *	API functions, networking
  */
 
-apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
-trendingGiphyURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`;
-monkeyGiphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=monkey`;
-_browseResultsOffset = 0;
+// const apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
+// apiKey defined in main.js
+const trendingGiphyURL = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`;
+const searchGiphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
+const monkeyGiphyURL = `${searchGiphyURL}&q=monkey`;
+let _browseResultsOffset = 0;
+
+async function loadGifs(limit, offset = 0, query = null) {
+	let response = query ?
+		await fetch(`${searchGiphyURL}&offset=${offset}&q=${query}`) :
+		await fetch(`${trendingGiphyURL}&offset=${offset}`);
+}
 
 async function getTrendingGifs(limit = 1, offset = _browseResultsOffset, monkey = false) {
 	if (! monkey) _browseResultsOffset += limit;

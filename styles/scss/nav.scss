@@ -45,5 +45,13 @@
 }
 
 #search-bar {
-	width: auto;
+	@include flex-row;
+	width: 80%;
+	height: calc(#{$nav-height} / 2);
+	.btn {
+		border: none;
+	}
+	.btn:hover {
+		cursor: pointer;
+	}
 }

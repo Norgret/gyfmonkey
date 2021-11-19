@@ -1,0 +1,254 @@
+@keyframes magnet {
+  to {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+.text {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 140%;
+  letter-spacing: 0.1em;
+}
+
+.text.title {
+  font-size: 4em;
+  font-weight: 900;
+}
+
+.text.subtitle {
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.text.bold {
+  font-weight: 900;
+}
+
+.text.link {
+  color: #ffffff;
+}
+
+@media screen and (max-width: calc(1000px - 1px)) {
+  .desktop {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .mobile {
+    display: none;
+  }
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #17181F;
+}
+
+a {
+  text-decoration: none;
+}
+
+#test {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#gifHolder {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.video-view {
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.video-view .video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #ccc;
+}
+.video-view .video:hover + .video-content {
+  visibility: visible;
+}
+.video-view .video-content:hover {
+  visibility: visible;
+}
+.video-view .video-content {
+  height: 25px;
+  display: flex;
+  visibility: hidden;
+  background-color: #414141;
+  opacity: 80%;
+  width: 100%;
+  margin: 5px;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+.video-view .video-content i {
+  color: black;
+}
+
+#drop-down-nav {
+  color: #ffffff;
+  background-color: #DE023D;
+  border-bottom: 2px solid #17181F;
+}
+#drop-down-nav div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+#drop-down-nav a, #drop-down-nav i {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3.5vw;
+}
+
+#navigation {
+  background-color: #DE023D;
+  width: 100%;
+  height: 5vw;
+  font-size: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 25px solid #b60333;
+  position: fixed;
+}
+#navigation #active {
+  color: #17181F;
+}
+#navigation a {
+  color: #DADFEA;
+  text-decoration: none;
+}
+#navigation i {
+  font-size: 2.5vw;
+}
+#navigation #links {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#navigation #search {
+  width: 10vw;
+  border: 1px solid black;
+  border-radius: 15%;
+  height: 1.5vw;
+}
+#navigation #searchButton {
+  width: 6vw;
+  height: 2vw;
+}
+
+#navbar-padding {
+  height: 12vw;
+}
+
+#footer {
+  background-color: #DE023D;
+  width: 100%;
+  height: 50px;
+  font-size: 0.8vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#footer a {
+  color: #DADFEA;
+  text-decoration: none;
+}
+
+#body-container {
+  color: #DADFEA;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  #navigation #links {
+    display: none;
+  }
+}
+#navigation {
+  justify-content: space-evenly;
+}
+#navigation #search {
+  height: 4vw;
+  width: 25vw;
+}
+#navigation #searchButton {
+  height: 4vw;
+  width: 10vw;
+}
+#navigation i {
+  font-size: 5vw;
+}
+
+#navbar-padding {
+  height: 17vw;
+}
+
+#footer {
+  font-size: 2.5vw;
+}
+
+@media only screen and (min-width: 801px) {
+  #navigation #hamburger {
+    display: none;
+  }
+
+  #navigation {
+    font-size: 2.5vw;
+  }
+  #navigation #search {
+    height: 2vw;
+    width: 15vw;
+  }
+}
+.searchForm {
+  width: 160px;
+  background-color: #DADFEA;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  padding: 2px;
+}
+.searchForm input {
+  background-color: #DADFEA;
+  border: none;
+  outline: none;
+}
+.searchForm button {
+  border: none;
+  background: none;
+}
+.searchForm button:hover {
+  cursor: pointer;
+}
