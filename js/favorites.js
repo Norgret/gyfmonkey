@@ -21,6 +21,20 @@ function favGif(id) { //adds the gif to the storage and changes the color of the
     }
 }
 
+function favHomeGif(id) { //adds the gif to the favorites from the home page
+    if (savedGifs.indexOf(id) == -1) {
+        savedGifs.push(id);
+        localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+        document.getElementById(`homeHeart-${id}`).style.color = 'pink';
+    }
+    else {//removes the gif from the storage and changed heart back to normal
+        let toGoIndex = savedGifs.indexOf(id);
+        savedGifs.splice(toGoIndex, 1);
+        localStorage.setItem('stored_GIFS', JSON.stringify(savedGifs));
+        document.getElementById(`homeHeart-${id}`).style.color = '#FFFFFF';
+    }
+}
+
 //function for clear the local storage for testing
 function clearStorage() {
     localStorage.removeItem('stored_GIFS');

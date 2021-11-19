@@ -17,7 +17,7 @@ async function loadGifs(limit, offset = 0, query = null) {
 }
 
 async function getTrendingGifs(limit = 1, offset = _browseResultsOffset, monkey = false) {
-	if (! monkey) _browseResultsOffset += limit;
+	if (!monkey) _browseResultsOffset += limit;
 
 	// get monkey-related gifs if monkey == true
 	let queries = `limit=${limit}&offset=${offset}`;
@@ -74,9 +74,9 @@ function getGifPreviewHTML(gif, display = '') {
 				<source type='video/webm' src="https://i.giphy.com/media/${gif.id}/giphy.mp4">
 			</video>
 			<div class='media-overlay'>
-				<i class='btn fas fa-heart' onclick = "likeGif('${gif.id}')" ></i>
-				<i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
-				<i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
+				<i class='btn fas fa-heart' id="homeHeart-${gif.id}" onclick = "favHomeGif('${gif.id}')" ></i>
+				<i class='btn fas fa-copy' onclick = "copy('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
+				<i class='btn fas fa-info-circle' onclick="getInfo('${gif.id}')"></i>
 			</div>
 		</div>`;
 

@@ -21,6 +21,7 @@
 .text.subtitle {
   font-size: 3em;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .text.bold {
@@ -232,23 +233,5 @@ a {
     width: 15vw;
   }
 }
-.searchForm {
-  width: 160px;
-  background-color: #DADFEA;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid grey;
-  padding: 2px;
-}
-.searchForm input {
-  background-color: #DADFEA;
-  border: none;
-  outline: none;
-}
-.searchForm button {
-  border: none;
-  background: none;
-}
-.searchForm button:hover {
-  cursor: pointer;
-}
+
+/*# sourceMappingURL=main.css.map */
