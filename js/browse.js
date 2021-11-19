@@ -12,7 +12,7 @@ async function getSearch(search, number = 50) { //the API call
 }
 function loadBrowsePage() { //runs when a search bar is used from a page that isn't browse.html
     localStorage.setItem('searchTerm', document.getElementById('search').value);
-    document.location.href = 'http://127.0.0.1:5500/html/browse.html';
+    document.location.href = '../html/browse.html';
 }
 function showResults() { //runs when the page loads
     if (localStorage.getItem('searchTerm') !== null) {//runs if the local storage is not empty(means the search was made from the browse.js page)
@@ -44,7 +44,7 @@ function showSearch(info) {
         <div class="video-content">
         <button class="heartButton"onclick="favGif('${info.data[a].id}')"><i class="fas fa-heart" id="heart-${info.data[a].id}"></i></button>
         <i class="fas fa-copy tooltip" onclick = "copy('https://i.giphy.com/media/${info.data[a].id}/giphy.gif')"><span class="toolTipText">Copied!</span></i>
-        <i class="fas fa-info-circle" onclick="location.href = 'gifinfo.html'"></i>
+        <i class="fas fa-info-circle" onclick="getInfo('${info.data[a].id}')"></i>
             </div>
         </div>`
 
@@ -83,4 +83,9 @@ function showSearch(info) {
 
 function copy(url) {
     navigator.clipboard.writeText(url);
+}
+
+function getInfo(id) {
+    localStorage.setItem('currentGifInfo', JSON.stringify(id))
+    document.location.href = '../html/gifinfo.html'
 }
