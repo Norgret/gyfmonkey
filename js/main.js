@@ -88,7 +88,7 @@ let activeMenu = false;
 
 hamMenu.onclick = function () {
     if (activeMenu == false) {
-        dropMod.innerHTML += `<div id="links">
+        dropMod.innerHTML = `<div id="links">
     <a href="favorites.html">Favorites</a>
     <a href="gifinfo.html">Gif Info</a>
     <a href="browse.html">Browse</a>
