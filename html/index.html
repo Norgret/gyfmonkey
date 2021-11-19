@@ -21,8 +21,10 @@
 
 		<div id='search-bar' class='nav-btn desktop'>
 			<!-- <i>search</i> -->
-			<input type='text' id='search-bar-entry' placeholder="Search Here">
-			<button onclick='runSearch()'>Search</button>
+			<div class="searchForm">
+				<input type="text" id="search" placeholder="Search Gifs">
+				<button class="insideButton" onclick="loadBrowsePage()"><i class="fas fa-search"></i></button>
+			</div>
 		</div>
 
 		<div class='navlinks-container desktop'>
@@ -39,21 +41,6 @@
 
 	</div>
 	<div id='navbar-padding'></div>
-
-	<!-- <div id="navigation">
-		<i class="fas fa-align-justify" id="hamburger"></i>
-		<input type="text" id="search" placeholder="Search Here">
-		<button onclick="runSearch()">Search</button>
-		<div>
-			<a href="favorites.html">Favorites</a>
-			<a href="gifinfo.html">Gif Info</a>
-			<a href="browse.html" id="active">Browse</a>
-			<i class="fas fa-user-circle"></i>
-		</div>
-	</div> -->
-
-
-
 
 
 	<div id='body-container'>
@@ -74,12 +61,43 @@
 		</div>
 
 		<!-- Landing page content -->
-		<div class='content body-content'>
-			body content
+		<div id='main-content' class='content body-content'>
 
-			<div class='trending-gif-preview'></div>
+			<div class='banana-gif-preview'>
+				<h1 class='text subtitle'>Banana Gifs</h1>
+				<div class='side-scroll-gif-display' id='banana-gifs-display'></div>
+			</div>
 
-			<div class='favorites-gif-preview'></div>
+			<div class='favorite-gif-preview'>
+				<h1 class='text subtitle'>Your Favorite Gifs</h1>
+				<div class='side-scroll-gif-display' id='favorite-gifs-display'></div>
+			</div>
+
+			<div id='dynamic-gifs-display'>
+
+		        <!-- <div class='preview gif-preview'>
+		            <video autoplay loop muted class='media'>
+		               	<source type='video/webm' src="https://i.giphy.com/media/GW31NbeI4kmqY/giphy.mp4">
+		            </video>
+		            <div class='media-overlay'>
+		                <i class='toggled btn fas fa-heart' onclick = "favGif('${gif.id}')" ></i>
+		                <i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
+		                <i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
+		            </div>
+		        </div>
+
+		        <div class='preview gif-preview-dynamic-height'>
+		            <video autoplay loop muted class='media'>
+		                <source type='video/webm' src="https://i.giphy.com/media/GW31NbeI4kmqY/giphy.mp4">
+		            </video>
+		            <div class='media-overlay'>
+		                <i class='toggled btn fas fa-heart' onclick = "favGif('${gif.id}')" ></i>
+		                <i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gif.id}/giphy.gif')"></i>
+		                <i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
+		            </div>
+		        </div> -->
+
+			</div>
 		</div>
 
 	</div>
@@ -87,6 +105,7 @@
 	<script src="../js/main.js"></script>
 	<script src="../js/index.js"></script>
 	<script src="../js/search.js"></script>
+	<script src="../js/dynamic-display.js"></script>
 </body>
 
 </html>

@@ -68,3 +68,28 @@
 //     transition: 0s;
 //     visibility: visible;
 //   }
+
+//This is to remove the default button styling for the heart
+
+.heartButton {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.heartButton:hover {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.heartButton:active {
+  outline: none;
+  border: none;
+}
+
+.heartButton:focus {
+  outline: 0;
+}

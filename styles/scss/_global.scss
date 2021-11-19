@@ -9,11 +9,14 @@ $darkgray: #17181F;
 $black: #000000;
 $white: #ffffff;
 $shadow: rgba(0, 0, 0, 0.3);
+$default-box-shadow: 5px 5px 12px $shadow;
+$default-box-shadow-light: 3px 3px 9px $shadow;
+$default-box-shadow-heavy: 7px 7px 15px $shadow;
 
 // misc.
-$side-margin: 7vw;
+$side-margin: max(4vw, 25px);
 $media-breakpoint: 1000px;
-$nav-height: 10vh;
+$nav-height: 7.5vh;
 
 //
 // mixins & templates

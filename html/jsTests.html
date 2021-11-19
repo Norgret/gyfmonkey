@@ -9,13 +9,19 @@
 </head>
 
 <body>
-    <p>Search</p>
+    <!-- <p>Search</p>
     <input type="text" id="search">
     <p>Number of results:</p>
     <input type="number" id="searchNum" value="10">
-    <button onclick="loadBrowsePage()">Search</button>
+    <button onclick="loadBrowsePage()">Search</button> -->
     <div id="body-container"></div>
     <button onclick="clearStorage()">CLEAR STORAGE</button>
+
+    <!-- styling for this button is in tests.scss -->
+    <div class="searchForm">
+        <input type="text" id="search" placeholder="Search Gifs">
+        <button class="insideButton" onclick="loadBrowsePage()"><i class="fas fa-search"></i></button>
+    </div>
 
 </body>
 <script src="../js/browse.js"></script>

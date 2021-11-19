@@ -4,6 +4,19 @@
 @import 'nav.scss';
 @import 'gif-preview.scss';
 
+//
+// body styles
+//
+
+#main-content {
+	margin: $nav-height $side-margin 0 $side-margin;
+}
+
+
+//
+// landing title styles
+//
+
 #title-display {
 	@include flex-column;
 	justify-content: center;
@@ -12,7 +25,6 @@
 }
 
 #background-gif-display {
-	z-index: 0;
 	@include flex-row;
 	flex-wrap: wrap;
 	position: absolute;
@@ -20,6 +32,9 @@
 	height: calc(100vh - #{$nav-height});
 	background-color: $black;
 	overflow: hidden;
+	z-index: -1;
+
+	box-shadow: $default-box-shadow-heavy;
 
 	.gif-container {
 		@include flex-column;
@@ -52,9 +67,44 @@
 }
 
 .title-content {
-	z-index: 1;
+	z-index: 0;
 	.title {
 		color: $white;
 		letter-spacing: 0.4em;
 	}
+}
+
+
+//
+// gif browsing previews display
+//
+
+.side-scroll-gif-display {
+	height: $preview-size;
+
+}
+
+.banana-gif-preview {
+
+}
+#banana-gifs-display {
+	border-top: 3px solid $green;
+}
+
+.favorite-gif-preview {
+
+}
+#favorite-gifs-display {
+	border-top: 3px solid $red;
+}
+
+
+#dynamic-gifs-display {
+	@include flex-row;
+	justify-content: center;
+	align-items: flex-start;
+	overflow-x: hidden;
+	// box-shadow: inset $default-box-shadow-light;
+	border-top: 3px solid $tan;
+	padding: 50px;
 }
