@@ -1,0 +1,9 @@
+#infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#infoContainer a {
+  color: #A2F5B9;
+}
