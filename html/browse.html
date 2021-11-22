@@ -40,8 +40,25 @@
 		<a href="#">Faq</a>
 		<p>copyright 2021 all right reserved</p>
 	</div>
+	<button onclick="" id="tester">Test</button>
+	<script>
+
+		if (window.innerWidth <= 991) {
+			// load mobile script
+			document.write("<script src='../js/small-browse.js'></scr" + "ipt>")
+		}
+		else { // viewportWidth width > 991
+			// load desktop script
+			document.write("<script src='../js/browse.js'></scr" + "ipt>")
+		}
+
+
+	</script>
+
 </body>
-<script src="../js/browse.js"></script>
+
+
+<!-- <script src="../js/browse.js"></script> -->
 <script src="../js/favorites.js"></script>
 <script src="../js/main.js"></script>
 
