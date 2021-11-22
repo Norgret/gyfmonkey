@@ -15,54 +15,24 @@ a {
 	text-decoration: none;
 }
 
-
-#test {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-#gifHolder {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-.video-view {
-	display: flex;
-	position: relative;
-	width: 300px;
-	height: 300px;
-	.video {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		background-color: #ccc;
-	}
-	.video:hover + .video-content{
-		visibility: visible;
-	}
-	.video-content:hover {
-		visibility: visible;
-	}
-	.video-content {
-		height: 25px;
-		display: flex;
-		visibility: hidden;
-		background-color: rgb(65, 65, 65);
-		opacity: 80%;
-		width: 100%;
-		margin: 5px; //margin around button container
-		align-self: flex-end;
-		align-items: center;
-		justify-content: space-around;
-		z-index: 1;
-		i {
-			color: black;
-		}
-
-	}
+#body-container {
+    @include flex-column;
+    align-items: center;
 }
 
+#main-content {
+    width: min(85vw, 1640px);
+    margin: $nav-height $side-margin 0 $side-margin;
+}
+
+#dynamic-gifs-display {
+    @include flex-row;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+    box-shadow: inset 0 0 15px $shadow;
+    padding: 50px;
+}
 
 //
 // custom styles must be placed near
@@ -159,11 +129,6 @@ a {
 
 }
 
-#body-container{
-    color:$lightgray;
-    width:100%;
-}
-
 // Media Queries
 //Mobile first media query
 
@@ -206,7 +171,7 @@ a {
 
 //desktop media query
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: $media-breakpoint) {
 	#navigation #hamburger {
 	  display:none;
 	}
@@ -226,31 +191,4 @@ a {
             font-size: 1vw;
         }
     }
-}
-
-
-//styling for new search bar
-$lightgray: #DADFEA;
-#search-bar {
-    // width: 160px;
-    // background-color: $lightgray;
-    // display:flex;
-    // flex-direction:row;
-    // border:1px solid grey;
-    // padding:2px;
-
-    // input {
-    //     background-color: $lightgray;
-    //     border:none;
-    //     outline: none;
-    // }
-
-    // button {
-    //     border: none;
-    //     background: none;
-    // }
-
-    // button:hover {
-    //     cursor: pointer;
-    // }
 }

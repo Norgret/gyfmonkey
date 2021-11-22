@@ -3,8 +3,10 @@
 
 <head>
 	<link type='text/css' rel='stylesheet' href="../styles/css/main.css" />
-	<link type='text/css' rel='stylesheet' href="../styles/css/favorites.css" />
+	<link type='text/css' rel='stylesheet' href="../styles/css/browse.css" />
+	<!-- FontAwesome -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 	<title>Search Gifs</title>
 </head>
 
@@ -27,7 +29,10 @@
 	<div id="drop-down-nav"></div>
 
 	<div id='body-container'>
-
+		<div id='main-content' class='content body-content'>
+			<div class='text subtitle' id='gifs-label'>Browse Trending Gifs</div>
+			<div id='dynamic-gifs-display'></div>
+		</div>
 	</div>
 
 
@@ -35,11 +40,11 @@
 		<a href="#">About</a>
 		<a href="#">Contact</a>
 		<a href="#">Faq</a>
-		<p>copyright 2021 all right reserved</p>
 	</div>
+
+	<script src="../js/main.js"></script>
+	<script src="../js/browse.js"></script>
+	<script src="../js/dynamic-display.js"></script>
 </body>
-<script src="../js/browse.js"></script>
-<script src="../js/favorites.js"></script>
-<script src="../js/main.js"></script>
 
 </html>

@@ -68,32 +68,9 @@ class DynamicGifDisplay {
 
 let dynamicGifDisplay = new DynamicGifDisplay();
 
-// accepts data object returned by API
+// accepts gifs array
 function renderDynamicGifDisplay(gifs) {
 	gifs.forEach(gif => dynamicGifDisplay.append(gif));
-}
-
-
-/*
- *	infinite scrolling
- */
-
-async function loadContent() {
-	window.removeEventListener('scroll', handler);
-	let trendingGifs = await getTrendingGifs(20);
-	renderDynamicGifDisplay(trendingGifs);
-	window.addEventListener('scroll', handler);
-}
-
-loadContent();
-
-
-function handler() {
-	const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
-	const threshold = 1500;
-	if (scrollTop + clientHeight > scrollHeight - threshold) {
-		loadContent();
-	}
 }
 
 

@@ -21,11 +21,12 @@ function renderFavoritesPreview(gifIDs) {
 //
 
 // render banana gifs preview
-loadGifs(10, 0, query = "banana").then((gifs) => {
+loadGifs(10, 0, query = "banana", incrementOffset = false).then((gifs) => {
 	renderBananaPreview(gifs);
 });
 
 // render favorites preview
-loadFavoriteGifs(10).then((gifIDs) => {
-	renderFavoritesPreview(gifIDs);
-});
+// loadFavoriteGifs(10).then((gifIDs) => {
+// 	renderFavoritesPreview(gifIDs);
+// });
+renderFavoritesPreview(loadFavoriteGifs(10));
