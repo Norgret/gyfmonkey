@@ -1,4 +1,4 @@
-let apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
+const apiKey = 'TJeFFaL4XtftdIyxMHSAUNJPNpW9YmnB';
 
 //this function gets the trending
 async function getTrending() {

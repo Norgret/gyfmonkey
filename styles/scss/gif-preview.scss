@@ -60,6 +60,9 @@ $preview-margin: 10px;
 .preview {
 	position: relative;
 	margin: $preview-margin;
+	margin-top: calc(#{$preview-margin} * 2);
+	margin-bottom: calc(#{$preview-margin} * 2);
+	// padding: $preview-margin;
 	background-color: $darkgray;
 	box-shadow: $default-box-shadow;
 
@@ -67,6 +70,7 @@ $preview-margin: 10px;
 		display: block;
 		object-fit: cover;
 		overflow: hidden;
+		border-radius: 5px;
 		z-index: 0;
 	}
 
