@@ -137,6 +137,7 @@ a {
   padding-bottom: 1.5vw;
   border-bottom: 25px solid #b60333;
   position: fixed;
+  z-index: 5;
 }
 #navigation #active {
   color: #17181F;
