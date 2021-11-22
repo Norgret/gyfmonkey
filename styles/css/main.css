@@ -259,6 +259,7 @@ a {
   }
   #navigation #searchButton {
     font-size: 1vw;
+    height: 2vw;
   }
 }
 
