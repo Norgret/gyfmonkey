@@ -115,9 +115,9 @@ function getGifPreviewHTML(gif = null, display = '', id = null) {
 				<source type='video/webm' src="https://i.giphy.com/media/${gifID}/giphy.mp4">
 			</video>
 			<div class='media-overlay'>
-				<i class='btn fas fa-heart' onclick = "likeGif('${gifID}')" ></i>
+				<i class='btn fas fa-heart' id="homeHeart-${gifID}" onclick = "likeGif('${gifID}')" ></i>
 				<i class='btn fas fa-copy' onclick = "copyToClipboard('https://i.giphy.com/media/${gifID}/giphy.gif')"></i>
-				<i class='btn fas fa-info-circle' onclick="location.href = 'gifinfo.html'"></i>
+				<i class='btn fas fa-info-circle' onclick="getInfo('${gifID}')"></i>
 			</div>
 		</div>`;
 

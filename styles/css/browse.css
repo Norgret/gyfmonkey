@@ -355,7 +355,6 @@ a {
 #search-bar {
   display: flex;
   flex-direction: row;
-  width: 80%;
   height: calc(7.5vh / 2);
 }
 #search-bar .btn {
@@ -501,5 +500,3 @@ a {
 .preview .media-overlay:hover {
   visibility: visible;
 }
-
-/*# sourceMappingURL=browse.css.map */
