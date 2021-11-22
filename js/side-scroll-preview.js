@@ -7,33 +7,25 @@ function renderBananaPreview(gifs) {
 	}
 }
 
-// accepts array of gifs
-function renderFavoritesPreview(gifs) {
+// accepts array of gifIDs
+function renderFavoritesPreview(gifIDs) {
 	let favoritesPreview = document.getElementById('favorite-gifs-display');
-	for (const gif of gifs) {
-		favoritesPreview.innerHTML += getGifPreviewHTML(gif, display = 'gif-preview-dynamic-width');
+	for (const gifID of gifIDs) {
+		favoritesPreview.innerHTML += getGifPreviewHTML(null, display = 'gif-preview-dynamic-width', id = gifID);
 	}
 }
 
 
-// favorite gif retreival, move this to main.js
-// let savedGifs = []
-// if (localStorage.getItem('stored_GIFS') == null) {
-//     savedGifs = [];
-// }
-// else {
-//     savedGifs = JSON.parse(localStorage.getItem('stored_GIFS'));
-// }
-async function loadFavoriteGifs(limit = null) {
-	return await JSON.parse(localStorage.getItem('stored_GIFS'));
-}
+//
+// render side-scrolling previews
+//
 
-
-// call render functions
+// render banana gifs preview
 loadGifs(10, 0, query = "banana").then((gifs) => {
 	renderBananaPreview(gifs);
 });
 
-loadFavoriteGifs().then((gifs) => {
-	renderFavoritesPreview(gifs);
+// render favorites preview
+loadFavoriteGifs(10).then((gifIDs) => {
+	renderFavoritesPreview(gifIDs);
 });
