@@ -3,16 +3,20 @@ let _search;
 
 // runs when page redirects to browse.html
 function showResults() {
-    let searchQuery = localStorage.getItem('searchTerm');
+    const searchQuery = localStorage.getItem('searchTerm');
     _search = new Search(searchQuery);
-    console.log(_search);
     localStorage.removeItem('searchTerm');
+
+    const titleText = searchQuery ? `Browse "${searchQuery}" Gifs` : `Browse Trending Gifs`;
+    document.getElementById('gifs-display-title').innerHTML = titleText;
+    loadContent();
 }
 
 // returns Search object
 function runSearch() {
     let searchQuery = document.getElementById('search').value;
     _search = new Search(searchQuery);
+    loadContent();
 }
 
 
@@ -23,14 +27,10 @@ function runSearch() {
 
 async function loadContent() {
     window.removeEventListener('scroll', handler);
-    console.log(_search);
     const gifs = await _search.loadResults(20);
     renderDynamicGifDisplay(gifs);
     window.addEventListener('scroll', handler);
 }
-
-loadContent();
-
 
 function handler() {
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement;

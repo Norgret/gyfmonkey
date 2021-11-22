@@ -11,9 +11,9 @@ function renderBackgroundDisplay(mobile = false) {
 	let limit = mobile ? 9 : 15;
 	const monkeySearch = new Search("monkey");			// initialize monkeySearch
 	monkeySearch.loadResults(limit).then((gifs) => {	// execute callback on 15 monkey gif objects
-		backgroundGifDisplay.style = 'display: none';	// hide all gif previews until loaded onto DOM
+		backgroundDisplayContents = '';
 		for (const gif of gifs) {
-			backgroundGifDisplay.innerHTML += `
+			backgroundDisplayContents += `
 				<div class='gif-container'>
 					<video autoplay loop muted class="gif">
 						<source type="video/webm" src="${gif.images.preview.mp4}">
@@ -21,7 +21,7 @@ function renderBackgroundDisplay(mobile = false) {
 				</div>
 			`;
 		}
-		backgroundGifDisplay.style = 'display: visible';
+		backgroundGifDisplay.innerHTML += backgroundDisplayContents;
 	});
 }
 renderBackgroundDisplay();

@@ -14,18 +14,15 @@
 
 	<div id='navbar'>
 
-		<div class='nav-btn mobile search-icon'>
-			<i>search icon</i>
-		</div>
-		<div class='nav-btn mobile menu-icon'>
-			<i class="icon fas fa-align-justify"></i>
-		</div>
-
-		<div id='search-bar' class='nav-btn desktop'>
+		<div id='search-bar' class='nav-btn'>
 			<input type="text" id="search" placeholder="Search Gifs">
 			<button class="btn btn-inner insideButton" onclick="loadBrowsePage()">
 				<i class="fas fa-search"></i>
 			</button>
+		</div>
+
+		<div class='nav-btn mobile menu-icon'>
+			<i class="icon fas fa-align-justify"></i>
 		</div>
 
 		<div class='navlinks-container desktop'>
@@ -44,6 +41,7 @@
 	<div id='navbar-padding'></div>
 
 
+	<div id='background-gradient'></div>
 	<div id='body-container'>
 
 		<!-- Display gifs behind landing screen -->
@@ -89,6 +87,7 @@
 
 	<script src="../js/main.js"></script>
 	<script src="../js/index.js"></script>
+	<script src="../js/search.js"></script>
 	<script src="../js/dynamic-display.js"></script>
 	<script src="../js/side-scroll-preview.js"></script>
 </body>

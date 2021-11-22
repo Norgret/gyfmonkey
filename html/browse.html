@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<link type='text/css' rel='stylesheet' href="../styles/css/main.css" />
+	<!-- <link type='text/css' rel='stylesheet' href="../styles/css/main.css" /> -->
 	<link type='text/css' rel='stylesheet' href="../styles/css/browse.css" />
 	<!-- FontAwesome -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 	<div id="navigation">
 		<div>
 			<input type="text" id="search" placeholder="Search Here">
-			<input type="button" id="searchButton" value="Search" onclick="runSearch()">
+			<input type="button" id="searchButton" value="Search" onclick="loadBrowsePage()">
 		</div>
 		<i class="fas fa-align-justify" id="hamburger"></i>
 		<div id="links">
@@ -24,13 +24,13 @@
 			<a href="browse.html" id="active">Browse</a>
 		</div>
 	</div>
+	<div id="drop-down-nav"></div>
 	<div id='navbar-padding'></div>
 
-	<div id="drop-down-nav"></div>
-
+	<div id='background-gradient'></div>
 	<div id='body-container'>
 		<div id='main-content' class='content body-content'>
-			<div class='text subtitle' id='gifs-label'>Browse Trending Gifs</div>
+			<div class='text subtitle' id='gifs-display-title'>Browse Trending Gifs</div>
 			<div id='dynamic-gifs-display'></div>
 		</div>
 	</div>
@@ -43,6 +43,7 @@
 	</div>
 
 	<script src="../js/main.js"></script>
+	<script src="../js/search.js"></script>
 	<script src="../js/browse.js"></script>
 	<script src="../js/dynamic-display.js"></script>
 </body>

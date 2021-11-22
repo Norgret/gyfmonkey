@@ -5,20 +5,6 @@
 @import 'gif-preview.scss';
 
 //
-// body styles
-//
-
-// #body-container {
-// 	@include flex-column;
-// 	align-items: center;
-// }
-// #main-content {
-// 	width: min(85vw, 1640px);
-// 	margin: $nav-height $side-margin 0 $side-margin;
-// }
-
-
-//
 // landing title styles
 //
 
@@ -92,19 +78,14 @@
 	width: 100%;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	box-shadow: inset $default-box-shadow-heavy;
 }
 
-.banana-gif-preview {
-
-}
+.banana-gif-preview {}
 #banana-gifs-display {
 	border-top: 3px solid $green;
 }
 
-.favorite-gif-preview {
-
-}
+.favorite-gif-preview {}
 #favorite-gifs-display {
 	border-top: 3px solid $red;
 }

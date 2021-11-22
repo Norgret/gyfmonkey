@@ -3,3 +3,15 @@
 @import 'main.scss';
 @import 'nav.scss';
 @import 'gif-preview.scss';
+
+#body-container {
+    margin-top: 100px;
+}
+
+#main-content {
+    width: max(85vw, 1640px);
+    text-align: center;
+}
+#dynamic-gifs-display {
+    border-top: 3px solid $tan;
+}

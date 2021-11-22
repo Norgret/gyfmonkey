@@ -154,18 +154,6 @@ function getGifPreviewHTML(gif = null, display = '', id = null) {
 
 
 /*
- *  Search bar functionality
- *  Redirect to browse.html
- */
-
-// redirects to browse page, runs search query
-function loadBrowsePage() {
-    localStorage.setItem('searchTerm', document.getElementById('search').value);
-    document.location.href = '../html/browse.html';
-}
-
-
-/*
 *
 *
 *
