@@ -88,20 +88,76 @@ let activeMenu = false;
 
 hamMenu.onclick = function () {
     if (activeMenu == false) {
-        dropMod.innerHTML += `<div id="links">
+        dropMod.innerHTML = `<div id="links">
     <a href="favorites.html">Favorites</a>
     <a href="gifinfo.html">Gif Info</a>
     <a href="browse.html">Browse</a>
 </div>`;
-        dropMod.style.height = "11vw";
+        dropMod.style.height = "1vw";
         dropMod.style.width = "100%";
-        dropMod.style.width = "100%";
-        dropMod.style.marginTop = "14vw";
+        setTimeout(function () {
+            dropMod.style.height = "2vw";
+            setTimeout(function () {
+                dropMod.style.height = "3vw";
+                setTimeout(function () {
+                    dropMod.style.height = "4vw";
+                    setTimeout(function () {
+                        dropMod.style.height = "5vw";
+                        setTimeout(function () {
+                            dropMod.style.height = "6vw";
+                            setTimeout(function () {
+                                dropMod.style.height = "7vw";
+                                setTimeout(function () {
+                                    dropMod.style.height = "8vw";
+                                    setTimeout(function () {
+                                        dropMod.style.height = "9vw";
+                                        setTimeout(function () {
+                                            dropMod.style.height = "10vw";
+                                        }, 10);
+                                    }, 10);
+                                }, 10);
+                            }, 10);
+                        }, 10);
+                    }, 10);
+                }, 10);
+            }, 10);
+        }, 10);
+
+        dropMod.style.marginTop = "10.5vw";
         dropMod.style.position = "fixed";
         activeMenu = true;
     }
     else if (activeMenu == true) {
         document.getElementById('drop-down-nav').innerHTML = ``;
+        dropMod.style.height = "10vw";
+        dropMod.style.width = "100%";
+        setTimeout(function () {
+            dropMod.style.height = "9vw";
+            setTimeout(function () {
+                dropMod.style.height = "8vw";
+                setTimeout(function () {
+                    dropMod.style.height = "7vw";
+                    setTimeout(function () {
+                        dropMod.style.height = "6vw";
+                        setTimeout(function () {
+                            dropMod.style.height = "5vw";
+                            setTimeout(function () {
+                                dropMod.style.height = "4vw";
+                                setTimeout(function () {
+                                    dropMod.style.height = "3vw";
+                                    setTimeout(function () {
+                                        dropMod.style.height = "2vw";
+                                        setTimeout(function () {
+                                            dropMod.style.height = "0vw";
+                                        }, 10);
+                                    }, 10);
+                                }, 10);
+                            }, 10);
+                        }, 10);
+                    }, 10);
+                }, 10);
+            }, 10);
+        }, 10);
         dropMod.style.height = "0vw";
         activeMenu = false;
     }
