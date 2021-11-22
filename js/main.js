@@ -129,6 +129,35 @@ hamMenu.onclick = function () {
     }
     else if (activeMenu == true) {
         document.getElementById('drop-down-nav').innerHTML = ``;
+        dropMod.style.height = "10vw";
+        dropMod.style.width = "100%";
+        setTimeout(function () {
+            dropMod.style.height = "9vw";
+            setTimeout(function () {
+                dropMod.style.height = "8vw";
+                setTimeout(function () {
+                    dropMod.style.height = "7vw";
+                    setTimeout(function () {
+                        dropMod.style.height = "6vw";
+                        setTimeout(function () {
+                            dropMod.style.height = "5vw";
+                            setTimeout(function () {
+                                dropMod.style.height = "4vw";
+                                setTimeout(function () {
+                                    dropMod.style.height = "3vw";
+                                    setTimeout(function () {
+                                        dropMod.style.height = "2vw";
+                                        setTimeout(function () {
+                                            dropMod.style.height = "0vw";
+                                        }, 10);
+                                    }, 10);
+                                }, 10);
+                            }, 10);
+                        }, 10);
+                    }, 10);
+                }, 10);
+            }, 10);
+        }, 10);
         dropMod.style.height = "0vw";
         activeMenu = false;
     }

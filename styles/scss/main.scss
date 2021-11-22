@@ -97,7 +97,7 @@ a {
     justify-content: space-around;
     align-items: center;
     padding-top: 15px;
-    padding-bottom: .5vw;
+    padding-bottom: 1.5vw;
     border-bottom: 25px solid #b60333;
     position:fixed;
     #active{
@@ -164,27 +164,25 @@ a {
 }
 
 // Media Queries
-// * optomize this later with mobile-only and desktop-only mixins
-// * can use navbar on index.html and nav.scss as reference
-@media only screen and (max-width: 800px) {
-	#navigation #links {
-	  display:none;
-	}
-	// #navigation{
-	// 	justify-content: space-evenly;
-	// 	#search{
-	// 		height:4vw;
-	// 		width:25vw;
-	// 	}
-	// 	i{
-	// 		font-size: 5vw;
-	// 	}
-	// }
-}
+//Mobile first media query
+
+#navigation #links {
+    @include mobile-only;
+    #navigation #links {
+        display:none;
+        
+      }
+    }
+    #drop-down-nav{
+        z-index: 5;
+      }
 
 
 #navigation{
-    justify-content: space-evenly;
+    justify-content: space-between;
+    div{
+        padding-left:5vw;
+    }
     #search{
         height:4vw;
         width:25vw;
@@ -195,7 +193,8 @@ a {
     }
     i{
         font-size: 5vw;
-    }
+        padding-right:5vw;
+     }
 }
 #navbar-padding{
     height:17vw;
@@ -204,7 +203,9 @@ a {
     font-size: 2.5vw;
 }
 
-@media only screen and (min-width: 801px) {
+//desktop media query
+
+@media only screen and (min-width: 1000px) {
 	#navigation #hamburger {
 	  display:none;
 	}
@@ -212,6 +213,9 @@ a {
         display:none;
     }
     #navigation{
+        div{
+            padding-right:5vw;
+        }
         font-size: 2.5vw;
         #search{
             height:2vw;

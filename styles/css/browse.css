@@ -21,6 +21,7 @@
 .text.subtitle {
   font-size: 3em;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .text.bold {
@@ -105,18 +106,37 @@ a {
   color: black;
 }
 
+#drop-down-nav {
+  color: #ffffff;
+  background-color: #DE023D;
+}
+#drop-down-nav div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  border-bottom: 2px solid #17181F;
+}
+#drop-down-nav a, #drop-down-nav i {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3.5vw;
+}
+
 #navigation {
   background-color: #DE023D;
   width: 100%;
-  height: 50px;
+  height: 5vw;
   font-size: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 1.5vw;
   border-bottom: 25px solid #b60333;
+  position: fixed;
 }
 #navigation #active {
   color: #17181F;
@@ -128,7 +148,7 @@ a {
 #navigation i {
   font-size: 2.5vw;
 }
-#navigation div {
+#navigation #links {
   width: 50%;
   display: flex;
   flex-direction: row;
@@ -136,10 +156,23 @@ a {
   align-items: center;
 }
 #navigation #search {
-  width: 10%;
+  width: 10vw;
   border: 1px solid black;
   border-radius: 15%;
   height: 1.5vw;
+}
+#navigation #searchButton {
+  width: 6vw;
+  height: 2vw;
+  border-color: #9b042c;
+  border-radius: 10%;
+  background-color: #b60333;
+  color: #ffffff;
+  font-size: 2vw;
+}
+
+#navbar-padding {
+  height: 12vw;
 }
 
 #footer {
@@ -159,39 +192,72 @@ a {
   text-decoration: none;
 }
 
-/** this code breaks stuff **/
 #body-container {
   color: #DADFEA;
   width: 100%;
 }
 
-@media only screen and (max-width: 800px) {
-  #navigation div {
+@media screen and (max-width: 1000px) {
+  #navigation #links {
+    display: none;
+  }
+}
+#navigation #links #navigation #links {
+  display: none;
+}
+
+#drop-down-nav {
+  z-index: 5;
+}
+
+#navigation {
+  justify-content: space-between;
+}
+#navigation div {
+  padding-left: 5vw;
+}
+#navigation #search {
+  height: 4vw;
+  width: 25vw;
+}
+#navigation #searchButton {
+  height: 4vw;
+  width: 10vw;
+}
+#navigation i {
+  font-size: 5vw;
+  padding-right: 5vw;
+}
+
+#navbar-padding {
+  height: 17vw;
+}
+
+#footer {
+  font-size: 2.5vw;
+}
+
+@media only screen and (min-width: 1000px) {
+  #navigation #hamburger {
     display: none;
   }
 
-  #navigation {
-    justify-content: space-evenly;
-  }
-  #navigation #search {
-    height: 4vw;
-    width: 25vw;
-  }
-  #navigation i {
-    font-size: 5vw;
-  }
-}
-@media only screen and (min-width: 800px) {
-  #hamburger {
+  #drop-down-nav {
     display: none;
   }
 
   #navigation {
     font-size: 2.5vw;
   }
+  #navigation div {
+    padding-right: 5vw;
+  }
   #navigation #search {
     height: 2vw;
     width: 15vw;
+  }
+  #navigation #searchButton {
+    font-size: 1vw;
   }
 }
 @keyframes magnet {
@@ -217,6 +283,7 @@ a {
 .text.subtitle {
   font-size: 3em;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .text.bold {
@@ -285,7 +352,16 @@ a {
 }
 
 #search-bar {
-  width: auto;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: calc(7.5vh / 2);
+}
+#search-bar .btn {
+  border: none;
+}
+#search-bar .btn:hover {
+  cursor: pointer;
 }
 
 @keyframes magnet {
@@ -311,6 +387,7 @@ a {
 .text.subtitle {
   font-size: 3em;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .text.bold {
@@ -379,6 +456,8 @@ a {
 .preview {
   position: relative;
   margin: 10px;
+  margin-top: calc(10px * 2);
+  margin-bottom: calc(10px * 2);
   background-color: #17181F;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
 }
@@ -386,6 +465,7 @@ a {
   display: block;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 5px;
   z-index: 0;
 }
 .preview .media-overlay {
@@ -420,3 +500,5 @@ a {
 .preview .media-overlay:hover {
   visibility: visible;
 }
+
+/*# sourceMappingURL=browse.css.map */

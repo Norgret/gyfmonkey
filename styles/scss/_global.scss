@@ -100,7 +100,7 @@ $nav-height: 7.5vh;
 	}
 }
 @mixin mobile-only {
-	@media screen and (min-width: $media-breakpoint) {
+	@media screen and (max-width: $media-breakpoint) {
 		display: none;
 	}
 }
