@@ -46,7 +46,7 @@
 
 #search-bar {
 	@include flex-row;
-	// width: 80%;
+	width: auto;
 	height: calc(#{$nav-height} / 2);
 	.btn {
 		border: none;

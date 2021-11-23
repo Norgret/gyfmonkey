@@ -332,6 +332,7 @@ a {
 #search-bar {
   display: flex;
   flex-direction: row;
+  width: auto;
   height: calc(7.5vh / 2);
 }
 #search-bar .btn {
