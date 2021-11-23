@@ -90,7 +90,7 @@ hamMenu.onclick = function () {
     if (activeMenu == false) {
         dropMod.innerHTML = `<div id="links">
     <a href="favorites.html">Favorites</a>
-    <a href="gifinfo.html">Gif Info</a>
+    <a href="index.html">Home</a>
     <a href="browse.html">Browse</a>
 </div>`;
         dropMod.style.height = "1vw";
@@ -123,7 +123,7 @@ hamMenu.onclick = function () {
             }, 10);
         }, 10);
 
-        dropMod.style.marginTop = "10.5vw";
+        dropMod.style.marginTop = "12.5vw";
         dropMod.style.position = "fixed";
         activeMenu = true;
     }
