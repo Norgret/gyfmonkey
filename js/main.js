@@ -74,7 +74,7 @@ class Search {
  */
 
 // retreive favorite gif IDs from storage, return array
-function loadFavoriteGifs(limit = null) {
+function loadFavoriteGifs(limit = null, offset = null) {
     let gifIDs = JSON.parse(localStorage.getItem('stored_GIFS'));
     gifIDs = limit ?
         gifIDs.splice(0, limit - 1) :

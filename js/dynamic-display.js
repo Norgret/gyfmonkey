@@ -39,7 +39,7 @@ class DynamicGifDisplay {
 
 
 	// append gif to shortest column
-	append(gif) {
+	append(gif, id = null) {
 
 		const shortestCol = this.getShortestCol();
 
@@ -50,7 +50,9 @@ class DynamicGifDisplay {
 		const lastNode = nodes[nodes.length - 1];
 
 		// nest gif preview inside div.col (see below reasoning)
-		lastNode.innerHTML += "<div class='col'>" + getGifPreviewHTML(gif, 'gif-preview-dynamic-height') + "</div>";
+		lastNode.innerHTML += gif ?
+			"<div class='col'>" + getGifPreviewHTML(gif, 'gif-preview-dynamic-height') + "</div>":
+			"<div class='col'>" + getGifPreviewHTML(null, 'gif-preview-dynamic-height', id) + "</div>";
 
 		// update col.height
 		shortestCol.height = shortestCol.get().clientHeight;
@@ -71,6 +73,11 @@ let dynamicGifDisplay = new DynamicGifDisplay();
 // accepts gifs array
 function renderDynamicGifDisplay(gifs) {
 	gifs.forEach(gif => dynamicGifDisplay.append(gif));
+}
+
+// accepts array of gif IDs
+function renderDynamicGifDisplayByIds(ids) {
+	ids.forEach(id => dynamicGifDisplay.append(gif = null, id = id));
 }
 
 
