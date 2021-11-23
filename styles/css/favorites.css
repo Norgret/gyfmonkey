@@ -161,6 +161,8 @@ a {
   border: 1px solid black;
   border-radius: 15%;
   height: 1.5vw;
+  background-color: #b60333;
+  color: #ffffff;
 }
 #navigation #searchButton {
   width: 6vw;
